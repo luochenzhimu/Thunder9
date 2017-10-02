@@ -1,0 +1,554 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<xlue>
+	<control class="Community.UserInfoPanel">
+		<attr_def>
+		</attr_def>
+		<method_def>
+		</method_def>
+		<event_def>
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="bkg" class="ImageObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<image>bitmap.userinfopanel.bkg</image>
+					</attr>
+				</obj>
+				<obj id="top.bkg" class="TextureObject">
+					<attr>
+						<left>5</left>
+						<top>5</top>
+						<width>father.width-10</width>
+						<height>194</height>
+					</attr>
+					<children>
+						<obj id="top.layout" class="ImageObject">
+							<attr>
+								<left>7</left>
+								<top>7</top>
+								<width>father.width-14</width>
+								<height>father.height-7</height>
+							</attr>
+							<children>
+								<!-- 头像 -->
+								<obj id="header.mask" class="MaskObject">
+									<attr>
+										<left>(father.width-70)/2</left>
+										<top>18</top>
+										<width>70</width>
+										<height>70</height>
+										<maskorgx>0</maskorgx>
+										<maskorgy>0</maskorgy>
+										<masksizex>width</masksizex>
+										<masksizey>height</masksizey>
+										<type>bitmap</type>
+										<resid>bitmap.userinfopanel.header.mask</resid>
+										<chanel>r</chanel>
+										<limitchild>1</limitchild>
+										<drawmode>1</drawmode>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<children>
+										<obj id="header.img" class="ImageObject">
+											<attr>
+												<left>0</left>
+												<top>0</top>
+												<width>70</width>
+												<height>70</height>
+												<image>bitmap.userpanel.unlogin.header.big</image>
+												<drawmode>1</drawmode>	
+												<maskleft>0</maskleft>
+												<masktop>0</masktop>
+												<maskwidth>width</maskwidth>
+												<maskheight>height</maskheight>
+												<inheritmask>1</inheritmask>
+												<maskblendtype>attenunate</maskblendtype>
+												<cursor>IDC_HAND</cursor>
+												<antialias>1</antialias>
+											</attr>
+											<eventlist>
+												<event name="OnLButtonDown" redirect="father" />
+											</eventlist>
+										</obj>
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="UserInfoPanel.xml.lua" func="HeaderMask_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<!-- 昵称 -->
+								<obj id="nickname.text" class="TextObject">
+									<attr>
+										<left>0</left>
+										<top>105</top>
+										<width>0</width>
+										<height>0</height>
+										<autoresize>1</autoresize>
+										<font>font.userinfopanel.nickname.text</font>
+										<textcolor>color.userpanel.nickname.nonvip</textcolor>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<eventlist>
+										<event name="OnLButtonDown" file="UserInfoPanel.xml.lua" func="NickName_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<!-- 帐户等级(跟 vip 等级不是一回事儿) -->
+								<obj id="userlevel.bkg" class="TextureObject">
+									<attr>
+										<left>100</left>
+										<top>109</top>
+										<width>35</width>
+										<height>14</height>
+										<texture>texture.userinfopanel.userlevel.bkg</texture>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<children>
+										<obj id="userlevel.lv" class="ImageObject">
+											<attr>
+												<left>4</left>
+												<top>4</top>
+												<width>20</width>
+												<height>7</height>
+												<image>bitmap.userlevel.lv</image>
+											</attr>
+										</obj>
+										<obj id="userlevel.num1" class="ImageObject">
+											<attr>
+												<left>14</left>
+												<top>4</top>
+												<width>6</width>
+												<height>7</height>
+												<cursor>IDC_HAND</cursor>
+											</attr>
+										</obj>
+										<obj id="userlevel.num2" class="ImageObject">
+											<attr>
+												<left>20</left>
+												<top>4</top>
+												<width>6</width>
+												<height>7</height>
+												<cursor>IDC_HAND</cursor>
+											</attr>
+										</obj>
+										<obj id="userlevel.num3" class="ImageObject">
+											<attr>
+												<left>26</left>
+												<top>4</top>
+												<width>6</width>
+												<height>7</height>
+												<cursor>IDC_HAND</cursor>
+											</attr>
+										</obj>
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="UserInfoPanel.xml.lua" func="UserLevelBkg_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<!-- vip 等级 -->
+								<obj id="viplevel.img" class="ImageObject">
+									<attr>
+										<left>0</left>
+										<top>103</top>
+										<width>48</width>
+										<height>25</height>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<eventlist>
+										<event name="OnLButtonDown" file="UserInfoPanel.xml.lua" func="VipLevelImg_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<!-- 年 -->
+								<obj id="year" class="SeqImageObject">
+									<attr>
+										<left>0</left>
+										<top>104</top>
+										<width>16</width>
+										<height>24</height>
+										<drawmode>0</drawmode>	
+										<maskleft>0</maskleft>
+										<masktop>0</masktop>
+										<maskwidth>width</maskwidth>
+										<maskheight>height</maskheight>
+										<inheritmask>1</inheritmask>
+										<maskblendtype>attenunate</maskblendtype>
+										<loop>1</loop>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<children>
+										
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="UserInfoPanel.xml.lua" func="YearImg_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<!-- 签到按钮 -->
+								<!--obj id="signin.btn" class="Thunder.ImageTextButton">
+									<attr>
+										<left>(father.width-75)/2</left>
+										<top>135</top>
+										<width>75</width>
+										<height>25</height>
+										<Text>签  到</Text>
+										<TextColorID>system.white</TextColorID>
+										<TextColorID_Hover>system.white</TextColorID_Hover>
+										<TextColorID_Down>system.white</TextColorID_Down>
+										<DisableTextColor>system.white</DisableTextColor>
+										<BkgTextureID_Normal>texture.userinfopanel.btn.normal</BkgTextureID_Normal>
+										<BkgTextureID_Hover>texture.userinfopanel.btn.hover</BkgTextureID_Hover>
+										<BkgTextureID_Down>texture.userinfopanel.btn.down</BkgTextureID_Down>
+										<BkgTextureID_Disable>texture.userinfopanel.btn.disable</BkgTextureID_Disable>
+										<TextTopPos>4</TextTopPos>
+										<IconLeftPos>9</IconLeftPos>
+										<IconTopPos>7</IconTopPos>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<eventlist>
+										<event name="OnButtonClick" file="UserInfoPanel.xml.lua" func="SigninBtn_OnClick" />
+									</eventlist>
+								</obj-->
+							</children>
+						</obj>
+					</children>
+				</obj>
+				<obj id="bottom.bkg" class="TextureObject">
+					<attr>
+						<left>5</left>
+						<top>199</top>
+						<width>father.width-10</width>
+						<height>father.height-199-5</height>
+					</attr>
+					<children>
+						<obj id="bottom.layout" class="LayoutObject">
+							<attr>
+								<left>7</left>
+								<top>0</top>
+								<width>father.width-14</width>
+								<height>father.height-7</height>
+							</attr>
+							<children>
+								<obj id="globalRank.text" class="TextObject">
+									<attr>
+										<left>10</left>
+										<top>10</top>
+										<width>father.width/3-20</width>
+										<height>18</height>
+										<halign>center</halign>
+										<text>全球排名</text>
+										<textcolor>system.white</textcolor>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<children>
+										<obj id="globalRank.num" class="TextObject">
+											<attr>
+												<left>0</left>
+												<top>-18</top>
+												<width>father.width</width>
+												<height>18</height>
+												<halign>center</halign>
+												<text>0</text>
+												<textcolor>system.white</textcolor>
+												<font>font.userinfopanel.ranknum</font>
+												<cursor>IDC_HAND</cursor>
+											</attr>
+											<eventlist>
+												<event name="OnLButtonDown" redirect="father" />
+											</eventlist>
+										</obj>
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="UserInfoPanel.xml.lua" func="GlobalRank_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<obj class="TextureObject">
+									<attr>
+										<left>father.width/3</left>
+										<top>-4</top>
+										<width>1</width>
+										<height>30</height>
+										<texture>texture.userinfopanel.splitter.v</texture>
+									</attr>
+								</obj>
+								<obj id="silverScore.text" class="TextObject">
+									<attr>
+										<left>father.width/3+10</left>
+										<top>10</top>
+										<width>father.width/3-10</width>
+										<height>18</height>
+										<halign>center</halign>
+										<text>银豆</text>
+										<textcolor>system.white</textcolor>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<children>
+										<obj id="silverScore.num" class="TextObject">
+											<attr>
+												<left>0</left>
+												<top>-18</top>
+												<width>father.width</width>
+												<height>18</height>
+												<halign>center</halign>
+												<text>0</text>
+												<textcolor>system.white</textcolor>
+												<font>font.userinfopanel.ranknum</font>
+												<cursor>IDC_HAND</cursor>
+											</attr>
+											<eventlist>
+												<event name="OnLButtonDown" redirect="father" />
+											</eventlist>
+										</obj>
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="UserInfoPanel.xml.lua" func="SilverScore_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<obj class="TextureObject">
+									<attr>
+										<left>father.width/3*2</left>
+										<top>-4</top>
+										<width>1</width>
+										<height>30</height>
+										<texture>texture.userinfopanel.splitter.v</texture>
+									</attr>
+								</obj>
+								<obj id="levelup.text" class="TextObject">
+									<attr>
+										<left>father.width/3*2+10</left>
+										<top>-8</top>
+										<width>father.width/3-20</width>
+										<height>35</height>
+										<halign>center</halign>
+										<valign>bottom</valign>
+										<text>天升级</text>
+										<textcolor>system.white</textcolor>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<children>
+										<obj id="levelup.num" class="TextObject">
+											<attr>
+												<left>0</left>
+												<top>0</top>
+												<width>father.width</width>
+												<height>father.height</height>
+												<halign>center</halign>
+												<text>15</text>
+												<textcolor>system.white</textcolor>
+												<font>font.userinfopanel.ranknum</font>
+												<cursor>IDC_HAND</cursor>
+												<zorder>100</zorder>
+											</attr>
+											<eventlist>
+												<event name="OnLButtonDown" redirect="father" />
+											</eventlist>
+										</obj>
+										<obj id="levelup.img" class="ImageObject">
+											<attr>
+												<left>father.width/2+11</left>
+												<top>3</top>
+												<width>7</width>
+												<height>11</height>
+												<image>bitmap.userinfopanel.levelup</image>
+												<cursor>IDC_HAND</cursor>
+											</attr>
+											<eventlist>
+												<event name="OnLButtonDown" redirect="father" />
+											</eventlist>
+										</obj>
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="UserInfoPanel.xml.lua" func="LevelUp_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								
+								<obj id="highestlevel.text" class="TextObject">
+									<attr>
+										<left>father.width/3*2+10</left>
+										<top>-8</top>
+										<width>father.width/3-20</width>
+										<height>35</height>
+										<halign>center</halign>
+										<valign>bottom</valign>
+										<text>等级已满</text>
+										<textcolor>system.yellow</textcolor>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<children>
+										<obj id="highestlevel.img" class="ImageObject">
+											<attr>
+												<left>father.width/2-6</left>
+												<top>3</top>
+												<width>15</width>
+												<height>15</height>
+												<image>bitmap.userinfopanel.highestlevel</image>
+												<cursor>IDC_HAND</cursor>
+											</attr>
+											<eventlist>
+												<event name="OnLButtonDown" redirect="father" />
+											</eventlist>
+										</obj>
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="UserInfoPanel.xml.lua" func="LevelUp_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								
+								<!-- 会员提醒续费 -->
+								<obj id="expireDate.text" class="TextObject">
+									<attr>
+										<left>30</left>
+										<top>78</top>
+										<width>0</width>
+										<height>0</height>
+										<autoresize>1</autoresize>
+										<text>会员到期：</text>
+										<textcolor>color.userinfopanel.expiredate.text</textcolor>
+									</attr>
+									<children>
+										<obj id="expireDate.num" class="TextObject">
+											<attr>
+												<left>60</left>
+												<top>0</top>
+												<width>0</width>
+												<height>0</height>
+												<autoresize>1</autoresize>
+												<textcolor>color.userinfopanel.expiredate.num</textcolor>
+											</attr>
+										</obj>
+										<obj id="renewVip.link" class="Thunder.TextLink">
+											<attr>
+												<left>135</left>
+												<top>-1</top>
+												<width>60</width>
+												<height>20</height>
+												<Text>立即续费</Text>
+												<Font>default.font.underline</Font>
+											</attr>
+											<eventlist>
+												<event name="OnClick" file="UserInfoPanel.xml.lua" func="RenewVipLink_OnClick" />
+											</eventlist>
+										</obj>
+									</children>
+								</obj>
+								
+								<!-- 非会员提醒开通 -->
+								<obj id="openvip.text" class="TextObject">
+									<attr>
+										<left>4</left>
+										<top>73</top>
+										<autoresize>1</autoresize>
+										<text>您还未开通迅雷会员</text>
+										<textcolor>color.userinfopanel.expiredate.text</textcolor>
+									</attr>
+									<children>
+										<obj id="openvip.link" class="Thunder.TextLink">
+											<attr>
+												<left>135</left>
+												<top>-1</top>
+												<width>60</width>
+												<height>20</height>
+												<Text>立即开通</Text>
+												<Font>default.font.underline</Font>
+											</attr>
+											<eventlist>
+												<event name="OnClick" file="UserInfoPanel.xml.lua" func="OpenVipLink_OnClick" />
+											</eventlist>
+										</obj>
+									</children>
+								</obj>
+								
+								
+								<obj id="modifyUserInfo.link" class="Thunder.TextLink">
+									<attr>
+										<left>4</left>
+										<top>145</top>
+										<width>60</width>
+										<height>25</height>
+										<Text>修改资料</Text>
+										<TextColor>color.userinfopanel.logout.ex.link</TextColor>
+									</attr>
+									<eventlist>
+										<event name="OnClick" file="UserInfoPanel.xml.lua" func="ModifyUserInfoLink_OnClick" />
+									</eventlist>
+								</obj>
+								
+								<obj id="switchAccount.link" class="Thunder.TextLink">
+									<attr>
+										<left>66</left>
+										<top>145</top>
+										<width>60</width>
+										<height>25</height>
+										<Text>切换账号</Text>
+										<TextColor>color.userinfopanel.logout.ex.link</TextColor>
+									</attr>
+									<eventlist>
+										<event name="OnClick" file="UserInfoPanel.xml.lua" func="SwitchAccountLink_OnClick" />
+									</eventlist>
+								</obj>
+								
+								<obj id="logout.link" class="Thunder.TextLink">
+									<attr>
+										<left>224</left>
+										<top>145</top>
+										<width>30</width>
+										<height>25</height>
+										<Text>注销</Text>
+										<TextColor>color.userinfopanel.logout.ex.link</TextColor>
+									</attr>
+									<eventlist>
+										<event name="OnClick" file="UserInfoPanel.xml.lua" func="LogoutLink_OnClick" />
+									</eventlist>
+								</obj>
+							</children>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="UserInfoPanel.xml.lua" func="OnInitControl" />
+				<event name="OnDestroy" file="UserInfoPanel.xml.lua" func="OnDestroy" />
+			</eventlist>
+		</objtemplate>
+	</control>
+	
+	<objtemplate id="Community.UserInfoPanel.ObjTemplate" class="LayoutObject">
+		<children>
+			<obj id="ctrl" class="Community.UserInfoPanel">
+				<attr>
+					<left>0</left>
+					<top>0</top>
+					<width>father.width</width>
+					<height>father.height</height>
+				</attr>
+			</obj>
+		</children>
+	</objtemplate>
+	
+	<hostwndtemplate id="Community.UserInfoPanel.HostWnd" class="TipsHostWnd">
+		<attr>
+			<layered>1</layered>
+			<left>0</left>
+			<top>0</top>
+			<width>280</width>
+			<height>380</height>
+			<topmost>1</topmost>
+			<visible>1</visible>
+			<enable>1</enable>
+			<fps>30</fps>
+		</attr>
+		<eventlist>
+			<event name="OnSize">
+				-- 根据窗口大小调整控件大小
+				local arg = {...}
+				local hostwnd = arg[1]
+				local objTree = hostwnd:GetBindUIObjectTree()
+				local rootObj = objTree:GetRootObject()
+				rootObj:SetObjPos(0,0,arg[3],arg[4])
+			</event>
+		</eventlist>
+	</hostwndtemplate>
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->

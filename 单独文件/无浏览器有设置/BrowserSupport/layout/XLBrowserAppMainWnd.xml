@@ -1,0 +1,355 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<xlue>
+	<control class="XLBrowserAppMainWnd.Control">
+		<method_def>
+			<OpenNewTab file = "XLBrowserAppMainWnd.xml.lua" func = "OpenNewTab" />
+			<OpenNewUITab file = "XLBrowserAppMainWnd.xml.lua" func = "OpenNewUITab" />
+			<CloseTab file = "XLBrowserAppMainWnd.xml.lua" func = "CloseTab" />
+			<TryCloseTab file="XLBrowserAppMainWnd.xml.lua" func="TryCloseTab" />
+			<SeleteTab file = "XLBrowserAppMainWnd.xml.lua" func = "SeleteTab" />
+			<IsTabSelected file = "XLBrowserAppMainWnd.xml.lua" func = "IsTabSelected" />
+			<GetSelectedTab file = "XLBrowserAppMainWnd.xml.lua" func = "GetSelectedTab" />
+			<GetTab file = "XLBrowserAppMainWnd.xml.lua" func = "GetTab" />
+			<GetTabPageUIObject file = "XLBrowserAppMainWnd.xml.lua" func = "GetTabPageUIObject" />
+			<GetTabByContext file = "XLBrowserAppMainWnd.xml.lua" func = "GetTabByContext" />
+			<RefreshTab file = "XLBrowserAppMainWnd.xml.lua" func = "RefreshTab" />
+			<StopTab file = "XLBrowserAppMainWnd.xml.lua" func = "StopTab" />
+			<InsertExtensionIcon file = "XLBrowserAppMainWnd.xml.lua" func = "InsertExtensionIcon" />
+			<RemoveExtensionIcon file = "XLBrowserAppMainWnd.xml.lua" func = "RemoveExtensionIcon" />
+			<NavigateTab file = "XLBrowserAppMainWnd.xml.lua" func = "NavigateTab" />
+			<GetMainTab file = "XLBrowserAppMainWnd.xml.lua" func = "GetMainTab" />
+			<IsMainTabLoaded file = "XLBrowserAppMainWnd.xml.lua" func = "IsMainTabLoaded" />
+			<IsMainTabCreated file = "XLBrowserAppMainWnd.xml.lua" func = "IsMainTabCreated" />
+
+            <ForeachTab file = "XLBrowserAppMainWnd.xml.lua" func = "ForeachTab" />
+			
+			<GetTabCount file = "XLBrowserAppMainWnd.xml.lua" func = "GetTabCount" />
+			<GetTabByIndex file = "XLBrowserAppMainWnd.xml.lua" func = "GetTabByIndex" />
+			
+			<GetAddressEditObj file = "XLBrowserAppMainWnd.xml.lua" func = "GetAddressEditObj" />
+			
+			<ShowBookmarkBar file = "XLBrowserAppMainWnd.xml.lua" func = "ShowBookmarkBar" />
+			<GetBookmarkArea file = "XLBrowserAppMainWnd.xml.lua" func = "GetBookmarkArea" />
+			<!---->
+			<RegisterKeyForUrlListWnd file = "XLBrowserAppMainWnd.xml.lua" func = "RegisterKeyForUrlListWnd" />
+			
+			<ShowDevTool file = "XLBrowserAppMainWnd.xml.lua" func = "ShowDevTool" />
+			<IsSupportDevTool file = "XLBrowserAppMainWnd.xml.lua" func = "IsSupportDevTool" />
+		</method_def>
+		<event_def>
+			<OnNewTab>
+				<param>
+					<int />
+				</param>
+			</OnNewTab>
+			
+			<OnCloseTab>
+				<param>
+					<int />
+				</param>
+			</OnCloseTab>
+			
+			<OnBeforeCloseTab>
+				<param>
+					<int />
+				</param>
+			</OnBeforeCloseTab>
+			
+			<OnActivateTab>
+				<param>
+					<int />
+				</param>
+			</OnActivateTab>
+			
+			<OnBeforeNavigate>
+				<param>
+					<int />
+					<string />
+				</param>
+			</OnBeforeNavigate>
+			
+			<OnDocumentComplete>
+				<param>
+					<int />
+					<string />
+				</param>
+			</OnDocumentComplete> 
+			
+			<OnInit>
+				<param>
+				</param>
+			</OnInit>
+            
+            <OnNavigateError>
+				<param>
+					<string/>
+					<double/>
+				</param>
+			</OnNavigateError>
+			
+			<OnCertificateError>
+				<param>
+					<int/>
+					<string/>
+				</param>
+			</OnCertificateError>
+			
+			<OnCancelClose>
+			</OnCancelClose>
+		</event_def>
+		<objtemplate> 
+			<children>
+				<obj id="Main.Layout" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<children>
+						<obj id="TabHeader.Container" class="XLBrowserApp.TabHeaderContainer">
+							<attr>
+								<left>0</left>
+								<top>53</top>
+								<width>father.width - 166</width>
+								<height>36</height>
+							</attr>
+							<eventlist>
+								<event name="OnNewTabClick" file="XLBrowserAppMainWnd.xml.lua" func="TabContainer_OnNewTabClick" />
+								<event name="OnPreTabClick" file="XLBrowserAppMainWnd.xml.lua" func="TabContainer_OnPreTabClick" />
+								<event name="OnNextTabClick" file="XLBrowserAppMainWnd.xml.lua" func="TabContainer_OnNextTabClick" />
+								<event name="OnTabDragChange" file="XLBrowserAppMainWnd.xml.lua" func="TabContainer_OnTabDragChange" />
+							</eventlist>
+						</obj>
+						
+						<obj id="Operation.Layout" class="LayoutObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>0</height>
+							</attr>
+							<children>
+								<obj id="Operation.Bkg" class="TextureObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+										<texture>XLBrowserApp.OperationaArea.bkg</texture>
+									</attr>
+								</obj>
+								
+								<obj id="Goback.Btn" class="Thunder.ImageTextButton">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>0</width>
+										<height>0</height>
+										<IconBitmapID>bitmap.XLBrowserApp.Goback.Btn.normal</IconBitmapID>
+										<IconBitmapID_Down>bitmap.XLBrowserApp.Goback.Btn.down</IconBitmapID_Down>
+										<IconBitmapID_Hover>bitmap.XLBrowserApp.Goback.Btn.hover</IconBitmapID_Hover>
+										<IconBitmapID_Disable>bitmap.XLBrowserApp.Goback.Btn.disable</IconBitmapID_Disable>
+										<IconWidth>0</IconWidth>
+										<IconHeight>0</IconHeight>
+										<BkgTextureID_Hover>texture.XLBrowserApp.Btn.Bkg.hover</BkgTextureID_Hover>
+										<BkgTextureID_Down>texture.XLBrowserApp.Btn.Bkg.down</BkgTextureID_Down>
+									</attr>
+									<eventlist>
+										<event name="OnButtonClick" file="XLBrowserAppMainWnd.xml.lua" func="OnClick_GobackBtn" />
+									</eventlist>
+								</obj>
+								
+								<obj id="Goforward.Btn" class="Thunder.ImageTextButton">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>0</width>
+										<height>0</height>
+										<IconBitmapID>bitmap.XLBrowserApp.Goforward.Btn.normal</IconBitmapID>
+										<IconBitmapID_Down>bitmap.XLBrowserApp.Goforward.Btn.down</IconBitmapID_Down>
+										<IconBitmapID_Hover>bitmap.XLBrowserApp.Goforward.Btn.hover</IconBitmapID_Hover>
+										<IconBitmapID_Disable>bitmap.XLBrowserApp.Goforward.Btn.disable</IconBitmapID_Disable>
+										<IconWidth>0</IconWidth>
+										<IconHeight>0</IconHeight>
+										<BkgTextureID_Hover>texture.XLBrowserApp.Btn.Bkg.hover</BkgTextureID_Hover>
+										<BkgTextureID_Down>texture.XLBrowserApp.Btn.Bkg.down</BkgTextureID_Down>
+									</attr>
+									<eventlist>
+										<event name="OnButtonClick" file="XLBrowserAppMainWnd.xml.lua" func="OnClick_GoforwardBtn" />
+									</eventlist>
+								</obj>
+								
+								<obj id="Refresh.Btn" class="Thunder.ImageTextButton">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>0</width>
+										<height>0</height>
+										<IconBitmapID>bitmap.XLBrowserApp.Refresh.Btn.normal</IconBitmapID>
+										<IconBitmapID_Down>bitmap.XLBrowserApp.Refresh.Btn.down</IconBitmapID_Down>
+										<IconBitmapID_Hover>bitmap.XLBrowserApp.Refresh.Btn.hover</IconBitmapID_Hover>
+										<IconBitmapID_Disable>bitmap.XLBrowserApp.Refresh.Btn.disable</IconBitmapID_Disable>
+										<IconWidth>0</IconWidth>
+										<IconHeight>0</IconHeight>
+										<BkgTextureID_Hover>texture.XLBrowserApp.Btn.Bkg.hover</BkgTextureID_Hover>
+										<BkgTextureID_Down>texture.XLBrowserApp.Btn.Bkg.down</BkgTextureID_Down>
+									</attr>
+									<eventlist>
+										<event name="OnButtonClick" file="XLBrowserAppMainWnd.xml.lua" func="OnClick_RefreshBtn" />
+									</eventlist>
+								</obj>
+								
+								<obj id="Stop.Btn" class="Thunder.ImageTextButton">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>0</width>
+										<height>0</height>
+										<IconBitmapID>bitmap.XLBrowserApp.Stop.Btn.normal</IconBitmapID>
+										<IconBitmapID_Down>bitmap.XLBrowserApp.Stop.Btn.down</IconBitmapID_Down>
+										<IconBitmapID_Hover>bitmap.XLBrowserApp.Stop.Btn.hover</IconBitmapID_Hover>
+										<IconBitmapID_Disable>bitmap.XLBrowserApp.Stop.Btn.disable</IconBitmapID_Disable>
+										<IconWidth>0</IconWidth>
+										<IconHeight>0</IconHeight>
+										<BkgTextureID_Hover>texture.XLBrowserApp.Btn.Bkg.hover</BkgTextureID_Hover>
+										<BkgTextureID_Down>texture.XLBrowserApp.Btn.Bkg.down</BkgTextureID_Down>
+									</attr>
+									<eventlist>
+										<event name="OnButtonClick" file="XLBrowserAppMainWnd.xml.lua" func="OnClick_StopBtn" />
+									</eventlist>
+								</obj>
+								
+								<obj id="Address.Bar" class="LayoutObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width-120-40-2</width>
+										<height>0</height>
+									</attr>
+									<children>
+										<obj id="Safe.Icon" class="ImageObject">
+											<attr>
+												<left>0</left>
+												<top>0</top>
+												<width>0</width>
+												<height>0</height>
+												<image>XLBrowserApp.Safe.Icon</image>
+												<zorder>2000</zorder>
+												<visible>0</visible>
+											</attr>
+										</obj>
+										<obj id="Address.Edit" class="RichEditObject"> 
+											<attr>
+												<left>0</left>
+												<top>0</top>
+												<width>0</width>
+												<height>0</height>
+												<autourldetect>0</autourldetect>
+												<linkunderline>0</linkunderline>
+												<zorder>1000</zorder>
+												<!--bkcolor>color.browser.urlname</bkcolor-->
+												<multiline>0</multiline>
+												<linegap>0</linegap>
+												<viewinset>0,0,0,0</viewinset>
+											</attr>
+											<eventlist>
+												<event name="OnInitControl" file="XLBrowserAppMainWnd.xml.lua" func="OnInitControl_UrlEdit" />
+												<event name="OnDestroy" file="XLBrowserAppMainWnd.xml.lua" func="OnDestroy_UrlEdit" />
+												<event name="OnFocusChange" file="XLBrowserAppMainWnd.xml.lua" func="OnEditFocusChange_UrlEdit" />
+												<event name="OnChange" file="XLBrowserAppMainWnd.xml.lua" func="OnEditChange_UrlEdit" />
+												<event name="OnKeyDown" file="XLBrowserAppMainWnd.xml.lua" func="OnEditKeyDown_UrlEdit" />
+												<event name="OnRButtonUp" file="XLBrowserAppMainWnd.xml.lua" func="OnEditRClick_UrlEdit" />
+												<!---->
+												<event name="OnLButtonDbClick" file="XLBrowserAppMainWnd.xml.lua" func="OnEditLButtonDbClick_UrlEdit" />
+												<event name="OnSelChange" file="XLBrowserAppMainWnd.xml.lua" func="OnSelChange_UrlEdit"/>
+											</eventlist>
+										</obj>
+										<obj id="OperationExtensionArea" class="LayoutObject">
+											<attr>
+												<left>father.width - 200</left>
+												<top>0</top>
+												<width>0</width>
+												<height>father.height</height>
+												<zorder>10000</zorder>
+											</attr>
+										</obj>
+									</children>
+								</obj>
+								
+								<obj id="Menu.Btn" class="Thunder.ImageTextButton">
+									<attr>
+										<left>father.width-40</left>
+										<top>0</top>
+										<width>0</width>
+										<height>0</height>
+										<IconBitmapID>bitmap.XLBrowserApp.Menu.Btn.normal</IconBitmapID>
+										<IconBitmapID_Down>bitmap.XLBrowserApp.Menu.Btn.down</IconBitmapID_Down>
+										<IconBitmapID_Hover>bitmap.XLBrowserApp.Menu.Btn.hover</IconBitmapID_Hover>
+										<IconBitmapID_Disable>bitmap.XLBrowserApp.Menu.Btn.disable</IconBitmapID_Disable>
+										<IconWidth>0</IconWidth>
+										<IconHeight>0</IconHeight>
+										<BkgTextureID_Hover>texture.XLBrowserApp.Btn.Bkg.hover</BkgTextureID_Hover>
+										<BkgTextureID_Down>texture.XLBrowserApp.Btn.Bkg.down</BkgTextureID_Down>
+									</attr>
+									<eventlist>
+										<event name="OnButtonClick" file="XLBrowserAppMainWnd.xml.lua" func="OnClick_MenuBtn" />
+									</eventlist>
+								</obj>
+							</children>
+							<eventlist>
+								<event name="OnLButtonDbClick" file="XLBrowserAppMainWnd.xml.lua" func="OperationBkg_OnMouseEvent" />
+								<event name="OnLButtonDown" file="XLBrowserAppMainWnd.xml.lua" func="OperationBkg_OnMouseEvent" />
+								<event name="OnLButtonUp" file="XLBrowserAppMainWnd.xml.lua" func="OperationBkg_OnMouseEvent" />
+								<event name="OnMouseEnter" file="XLBrowserAppMainWnd.xml.lua" func="OperationBkg_OnMouseEvent" />
+								<event name="OnMouseHover" file="XLBrowserAppMainWnd.xml.lua" func="OperationBkg_OnMouseEvent" />
+								<event name="OnMouseLeave" file="XLBrowserAppMainWnd.xml.lua" func="OperationBkg_OnMouseEvent" />
+								<event name="OnMouseMove" file="XLBrowserAppMainWnd.xml.lua" func="OperationBkg_OnMouseEvent" />
+								<event name="OnPosChange" file="XLBrowserAppMainWnd.xml.lua" func="OnOperationAreaPosChange"/>
+							</eventlist>
+						</obj>
+						
+						<obj id="BookmarkArea" class="XLBrowserAppMainWnd.BookmarkArea">
+							<attr>
+								<left>0</left>
+								<top>10+40+40</top>
+								<width>father.width</width>
+								<height>30</height>
+							</attr>
+						</obj>
+						
+						<obj id="TabPages" class="LayoutObject">
+							<attr>
+								<left>0</left>
+								<top>10+40+40+30</top>
+								<width>father.width</width>
+								<height>father.height - 90-30</height>
+							</attr>
+							<children>
+							</children>
+						</obj>
+						<!-- Added by chengbaoquan 20160329 -->
+						<!-- 标签tip -->
+						<obj id="TabTip" class="XLBrowserAppMainWnd.TabTip" >
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>0</width>
+								<height>0</height>
+							</attr>
+						</obj>
+						<!--Added end-->
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+            	  <event name="OnInitControl" file="XLBrowserAppMainWnd.xml.lua" func="OnInitControl"/>
+				  <event name="OnDestroy" file="XLBrowserAppMainWnd.xml.lua" func="OnDestroy" />
+				  <!--event name="OnFocusChange" file="XLBrowserAppMainWnd.xml.lua" func="OnFocusChange" /-->
+			</eventlist>
+		</objtemplate>
+	</control>
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->

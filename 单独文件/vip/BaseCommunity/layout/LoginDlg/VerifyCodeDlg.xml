@@ -1,0 +1,212 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<xlue>
+	<control class="Community.LoginDlg.VerifyCodeDlgCtrl">
+		<attr_def>
+		</attr_def>
+		<method_def>
+			<ShowPromptInfo file = "VerifyCodeDlg.xml.lua" func = "ShowPromptInfo"/>
+		</method_def>
+		<event_def>
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="bkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<texture>global.bkg.normal</texture>
+					</attr>
+					<children>
+						<obj id="bkg.layout" class="LayoutObject">
+							<attr>
+								<left>8</left>
+								<top>7</top>
+								<width>father.width-16</width>
+								<height>father.height-15</height>
+							</attr>
+							<children>
+								<obj id="caption" class="CaptionObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+									</attr>
+								</obj>
+								<obj id="title.text" class="TextObject">
+									<attr>
+										<left>26</left>
+										<top>41</top>
+										<width>0</width>
+										<height>0</height>
+										<autoresize>1</autoresize>
+										<text>为了您的账号安全，本次登录需输验证码。</text>
+									</attr>
+								</obj>
+								<obj id="system.btn" class="Thunder.System.ButtonEx.Ctrl">
+									<attr>
+										<left>father.width - 27</left>
+										<top>4</top>
+										<width>23</width>
+										<height>23</height>
+										<MaxShow>false</MaxShow>
+										<MiniShow>false</MiniShow>
+										<ItemWidthIsSame>false</ItemWidthIsSame>
+										<MiniWidth>0</MiniWidth>
+										<CloseWidth>49</CloseWidth>
+										<MaxWidth>0</MaxWidth>		
+										<zorder>1000</zorder>
+										<cursor>IDC_HAND</cursor>							
+									</attr>
+									<eventlist>
+										<event name="OnClose" file="VerifyCodeDlg.xml.lua" func="SystemBtn_OnClose" />
+									</eventlist>
+								</obj>
+								<obj id="verifycode.img" class="ImageObject">
+									<attr>
+										<left>26</left>
+										<top>118</top>
+										<width>150</width>
+										<height>46</height>
+										<drawmode>1</drawmode>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<eventlist>
+										<event name="OnLButtonDown" file="VerifyCodeDlg.xml.lua" func="VerifyCodeImg_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<obj id="verifycode.edit" class="Thunder.Iconed.Edit">
+									<attr>
+										<left>24</left>
+										<top>63</top>
+										<width>275</width>
+										<height>30</height>
+										<LeftMargin>6</LeftMargin>
+										<TopMargin>3</TopMargin>
+										<ShowMenu>true</ShowMenu>
+									</attr>
+									<eventlist>
+										<event name="OnEditFocusChange" file="VerifyCodeDlg.xml.lua" func="OnEditFocusChange" />
+									</eventlist>
+								</obj>
+								<obj id="newimage.link" class="Thunder.TextLink">
+									<attr>
+										<left>186</left>
+										<top>143</top>
+										<width>92</width>
+										<height>26</height>
+										<Text>看不清，换一张</Text>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<eventlist>
+										<event name="OnClick" file="VerifyCodeDlg.xml.lua" func="NewImageLink_OnClick" />
+									</eventlist>
+								</obj>
+								<obj id="error.text" class="TextObject">
+									<attr>
+										<left>26</left>
+										<top>41</top>
+										<autoresize>1</autoresize>
+										<text>请输入验证码。</text>
+										<visible>0</visible>
+										<textcolor>system.red</textcolor>
+									</attr>
+								</obj>
+								<obj id="errorEx.text" class="TextObject">
+									<attr>
+										<left>26</left>
+										<top>41</top>
+										<autoresize>1</autoresize>
+										<text>验证码不正确，请重新填写。</text>
+										<visible>0</visible>
+										<textcolor>system.red</textcolor>
+									</attr>
+								</obj>
+								<obj id="ok.btn" class="Thunder.Button" templateid="Thunder.Button.Light">
+									<attr>
+										<left>father.width-172</left>
+										<top>father.height-26-12</top>
+										<Text>确定</Text>
+										
+									</attr>
+									<eventlist>
+										<event name="OnClick" file="VerifyCodeDlg.xml.lua" func="OkBtn_OnClick" />
+									</eventlist>
+								</obj>
+								<obj id="cancel.btn" class="Thunder.Button" templateid="Thunder.Button.Dark">
+									<attr>
+										<left>father.width-74-12</left>
+										<top>father.height-26-12</top>
+										<Text>取消</Text>
+										
+									</attr>
+									<eventlist>
+										<event name="OnClick" file="VerifyCodeDlg.xml.lua" func="CancelBtn_OnClick" />
+									</eventlist>
+								</obj>
+							</children>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="VerifyCodeDlg.xml.lua" func="OnInitControl" />
+				<event name="OnDestroy" file="VerifyCodeDlg.xml.lua" func="OnDestroy" />
+			</eventlist>
+		</objtemplate>
+	</control>
+
+	<objtreetemplate id="Community.LoginDlg.VerifyCodeDlgTree" class="ObjectTreeTemplate">
+		<attr>
+			<left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="ctrl" class="Community.LoginDlg.VerifyCodeDlgCtrl">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>0</width>
+				<height>0</height>
+			</attr>
+		</obj>
+		<eventlist>
+			<event name="OnBindHostWnd" file="VerifyCodeDlg.xml.lua" func="OnBindHostWnd" />
+		</eventlist>
+	</objtreetemplate>
+
+	<hostwndtemplate id="Community.LoginDlg.VerifyCodeDlgHostWnd" class="ModalHostWnd">
+		<attr>
+			<layered>1</layered>
+			<left>0</left>
+			<top>0</top>
+			<width>340</width>
+			<height>250</height>
+			<topmost>0</topmost>
+			<visible>1</visible>
+			<enable>1</enable>
+			<maxbox>0</maxbox>
+			<minbox>0</minbox>
+			<fps>30</fps>
+			<appwindow>0</appwindow>
+		</attr>
+		<eventlist>
+			<event name="OnSize">
+				-- 控件大小的随窗口大小改变
+				local arg = {...}
+				local hostwnd = arg[1]
+				local objtree = hostwnd:GetBindUIObjectTree()
+				local rootObj = objtree:GetRootObject()
+				rootObj:SetObjPos(0,20,arg[3],arg[4])
+			</event>
+			<event name="OnShowWindow" file="VerifyCodeDlg.xml.lua" func="OnShowWindow" />
+		</eventlist>
+	</hostwndtemplate>
+
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->

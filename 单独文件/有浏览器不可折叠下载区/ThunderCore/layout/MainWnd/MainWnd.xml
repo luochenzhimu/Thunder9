@@ -1,0 +1,378 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<!--XML最好存储为UTF-8编码-->
+<xlue>
+	<objtreetemplate id="ThunderCore.Tree" class="ObjectTreeTemplate">
+		<attr>
+			<left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="MainWnd.Root" class="LayoutObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>father.width</width>
+				<height>father.height</height>
+				 <enabledrop>1</enabledrop>
+			</attr>
+			<children>
+				
+				<obj id="MainWnd.MainBkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<texture>texture.shadowex.bkg</texture>
+						<zorder>-20</zorder>
+					</attr>
+				</obj>
+				
+				<!-- 窗体的缩放-->
+				<obj id="MainWnd.Resize.BottomRight" class="ResizeObject">
+					<attr>
+						<left>father.width-15</left>
+						<top>father.height-15</top>
+						<width>15</width>
+						<height>15</height>
+						<type>bottomright</type>
+						<zorder>1000000</zorder>
+					</attr>
+				</obj>
+				<obj id="MainWnd.Resize.TopRight" class="ResizeObject">
+					<attr>
+						<left>father.width-5</left>
+						<top>0</top>
+						<width>10</width>
+						<height>10</height>
+						<type>topright</type>
+						<zorder>1000000</zorder>
+					</attr>
+				</obj>
+				<obj id="MainWnd.Resize.TopLeft" class="ResizeObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>10</width>
+						<height>10</height>
+						<type>topleft</type>
+						<zorder>1000000</zorder>
+					</attr>
+				</obj>
+				<obj id="MainWnd.Resize.BottomLeft" class="ResizeObject">
+					<attr>
+						<left>0</left>
+						<top>father.height-10</top>
+						<width>10</width>
+						<height>10</height>
+						<type>bottomleft</type>
+						<zorder>1000000</zorder>
+					</attr>
+				</obj>
+				<obj id="MainWnd.Resize.Top" class="ResizeObject">
+					<attr>
+						<left>10</left>
+						<top>0</top>
+						<width>father.width-15</width>
+						<height>5</height>
+						<type>Top</type>
+						<zorder>100000</zorder>
+					</attr>
+				</obj>
+				<obj id="MainWnd.Resize.Bottom" class="ResizeObject">
+					<attr>
+						<left>10</left>
+						<top>father.height-5</top>
+						<width>father.width-25</width>
+						<height>10</height>
+						<type>bottom</type>
+						<zorder>100000</zorder>
+					</attr>
+				</obj>
+				<obj id="MainWnd.Resize.Left" class="ResizeObject">
+					<attr>
+						<left>0</left>
+						<top>10</top>
+						<width>5</width>
+						<height>father.height-20</height>
+						<type>left</type>
+						<zorder>100000</zorder>
+					</attr>
+				</obj>
+				<obj id="MainWnd.Resize.Right" class="ResizeObject">
+					<attr>
+						<left>father.width-5</left>
+						<top>10</top>
+						<width>10</width>
+						<height>father.height-25</height>
+						<type>right</type>
+						<zorder>100000</zorder>
+					</attr>
+				</obj>
+								
+				<obj id="MainWnd.Layout" class="LayoutObject">
+					<attr>
+						<left>5</left>
+						<top>5</top>
+						<width>father.width-10</width>
+						<height>father.height-10</height>
+                        <enabledrop>1</enabledrop>
+					</attr>
+					<children>
+						<obj id="MainWnd.Bkg" class="Thunder.BkgCtrl">
+							<attr>
+								<width>father.width</width>
+								<height>father.height</height>
+								<TitleTexture>texture.mainwnd.title.bkg</TitleTexture>
+								<TitleHeight>0</TitleHeight>
+								<BkgTexture>texture.mainwnd.bkg</BkgTexture>
+								<Inactivate>false</Inactivate>
+								<MainBkg>true</MainBkg>
+								<WhiteMask>false</WhiteMask>
+								<BottomBar>false</BottomBar>
+								<ReBodyBkg>false</ReBodyBkg>
+							</attr>
+							<children>
+								<!--
+								<obj id="MainWnd.MainBkg" class="TextureObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+										<texture>bkg.main.bkg</texture>
+										<zorder>-70</zorder>
+									</attr>
+								</obj>
+								
+								<obj id="MainWnd.HeadBkg" class="TextureObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>50</height>
+										<texture>texture.mainwnd.title.bkg</texture>
+										<zorder>-50</zorder>
+									</attr>
+								</obj>
+								-->
+								<!-- 顶部区 -->
+								<obj id="MainWnd.HeadPanel" class="LayoutObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>50</height>
+									</attr>
+									<children>
+										<obj id="caption" class="CaptionObject">
+											<attr>
+												<left>0</left>
+												<top>0</top>
+												<width>father.width</width>
+												<height>father.height</height>
+											</attr>
+											<eventlist>
+												<event name="OnLButtonDbClick" file="MainWnd.xml.lua" func="OnCaptionDblClick" />
+											</eventlist>
+										</obj>
+										<obj class="LayoutObject">
+											<attr>
+												<left>0</left>
+												<top>0</top>
+												<width>father.width</width>
+												<height>father.height</height>
+											</attr>
+											<children>
+												<obj id="Mainwnd.SwitchSkinBtn" class="Thunder.Button">
+													<attr>
+														<left>father.width - 127 - 6</left>
+														<top>10</top>
+														<width>25</width>
+														<height>25</height>
+														<NormalBkgID>bitmap.mainwnd.skin.normal</NormalBkgID>
+														<HoverBkgID>bitmap.mainwnd.skin.hover</HoverBkgID>
+														<DownBkgID>bitmap.mainwnd.skin.down</DownBkgID>
+														<ShowFocusRect>false</ShowFocusRect>
+													</attr>
+													<eventlist>
+														<event name="OnInitControl" file="MainWnd.xml.lua" func="SwitchSkin_OnInitControl" />
+														<event name="OnClick" file="MainWnd.xml.lua" func="OnClick_SwitchSkinBtn" />
+													</eventlist>
+												</obj>
+												<obj id="mainwnd.menubtn" class="Thunder.Button">
+													<attr>
+														<left>father.width - 101 - 6</left>
+														<top>10</top>
+														<width>25</width>
+														<height>25</height>
+														<NormalBkgID>bitmap.mainwnd.menu.normal</NormalBkgID>
+														<HoverBkgID>bitmap.mainwnd.menu.hover</HoverBkgID>
+														<DownBkgID>bitmap.mainwnd.menu.down</DownBkgID>
+														<ShowFocusRect>false</ShowFocusRect>
+														<!-- <TipText>主菜单</TipText> -->
+													</attr>
+													<eventlist>
+														<event name="OnInitControl" file="MainWnd.xml.lua" func="MenuBtn_OnInitControl" />
+														<event name="OnClick" file="MainWnd.xml.lua" func="ShowPlatformMenu" />
+													</eventlist>
+												</obj>
+												<obj id="MainWnd.Sysbtn" class="Thunder.System.ButtonEx.Ctrl" >
+													<attr>
+														<left>father.width-81</left>
+														<top>0</top>
+														<width>81</width>
+														<height>35</height>
+														<zorder>330</zorder>
+														<CloseWidth>31</CloseWidth>
+														<MiniWidth>25</MiniWidth>
+														<MaxWidth>25</MaxWidth>
+														<ItemWidthIsSame>false</ItemWidthIsSame>
+														<Mini_NormalImageID>bitmap.mainwnd.mini.normal</Mini_NormalImageID>
+														<Mini_HoverImageID>bitmap.mainwnd.mini.hover</Mini_HoverImageID>
+														<Mini_DownImageID>bitmap.mainwnd.mini.down</Mini_DownImageID>
+														<Mini_DisableImageID>bitmap.mainwnd.mini.disable</Mini_DisableImageID>
+														<Max_NormalImageID>bitmap.mainwnd.max.normal</Max_NormalImageID>
+														<Max_HoverImageID>bitmap.mainwnd.max.hover</Max_HoverImageID>
+														<Max_DownImageID>bitmap.mainwnd.max.down</Max_DownImageID>
+														<Max_DisableImageID>bitmap.mainwnd.max.disable</Max_DisableImageID>
+														<Restore_NormalImageID>bitmap.mainwnd.restore.normal</Restore_NormalImageID>
+														<Restore_HoverImageID>bitmap.mainwnd.restore.hover</Restore_HoverImageID>
+														<Restore_DownImageID>bitmap.mainwnd.restore.down</Restore_DownImageID>
+														<Restore_DisableImageID>bitmap.mainwnd.restore.disable</Restore_DisableImageID>
+														<Close_NormalImageID>bitmap.mainwnd.close.normal</Close_NormalImageID>
+														<Close_HoverImageID>bitmap.mainwnd.close.hover</Close_HoverImageID>
+														<Close_DownImageID>bitmap.mainwnd.close.down</Close_DownImageID>
+														<Close_DisableImageID>bitmap.mainwnd.close.disable</Close_DisableImageID>
+													</attr>
+													<eventlist>
+														<event name="OnClose" file="MainWnd.xml.lua" func="Sysbtn_OnClose"/>
+														<event name="OnInitControl" file="MainWnd.xml.lua" func="Sysbtn_OnInitControl" />
+														<event name="OnMinisize" file="MainWnd.xml.lua" func="Sysbtn_OnMinisize"/>
+														<event name="OnMaxSize" file="MainWnd.xml.lua" func="Sysbtn_OnMaxSize" />
+														<event name="OnReStore" file="MainWnd.xml.lua" func="Sysbtn_OnMaxSize" />
+													</eventlist>
+												</obj>
+											</children>
+										</obj>
+									</children>
+								</obj>
+								<!-- 个人中心区 -->
+								<obj id="MainWnd.Community" class="Thunder.Community">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>372</width>
+										<height>50</height>
+									</attr>
+								</obj>
+								<!-- 下载区 -->
+                <obj id="MainWnd.BodyPanel.Download" class="LayoutObject">
+                  <attr>
+                    <left>0</left>
+                    <top>50</top>
+                    <width>374</width>
+                    <height>father.height- 50 - 35 - 7</height>
+                  </attr>
+                  <children>
+                    <obj id="MainWnd.Left" class="MainWnd.Left.Manager" >
+                      <attr>
+                        <left>0</left>
+                        <top>0</top>
+                        <width>father.width</width>
+                        <height>father.height</height>
+                      </attr>
+                      <eventlist>
+                        <!--event name="OnInitControl" file="MainWnd.xml.lua" func="Download_OnInitControl"/-->
+                      </eventlist>
+                    </obj>
+                  </children>
+                  <eventlist/>
+                </obj>
+								<!-- 状态栏 -->
+								<obj id="MainWnd.StatusBar" class="Thunder.StatusBar">
+									<attr>
+										<left>0</left>
+										<top>father.height-35</top>
+										<width>364</width>
+										<height>35</height>
+									</attr>
+								</obj>
+								<!-- 精简的主窗口区域 -->
+								<obj id="MinMainWnd" class="Thunder.MinMainWnd" >
+									<attr>
+										<left>0</left>
+										<top>50</top>
+										<width>0</width>
+										<height>father.height-50</height>
+										<visible>0</visible>
+										<zorder>1000000</zorder>
+									</attr>
+								</obj>
+								
+								<!-- 浏览器区 -->
+								<obj id="BrowserCtrl" class="XLBrowserAppMainWnd.Control" >
+									<attr>
+										<left>372</left>
+										<top>0</top>
+										<width>father.width-372</width>
+										<height>father.height</height>
+										<zorder>100000</zorder>
+									</attr>
+									<eventlist/>
+								</obj>
+							</children>
+							<eventlist>
+								<event name="OnInitControl" file="MainWnd.xml.lua" func="OnInitControl" />
+								<event name="OnDestroy" file="MainWnd.xml.lua" func="OnDestroy" />
+							</eventlist>
+						</obj>
+					</children>
+				    <eventlist>
+                        <event name="OnDragQuery" file="MainWnd.xml.lua" func="body_OnDragQuery" />
+                        <event name="OnDragEnter" file="MainWnd.xml.lua" func="body_OnDragEnter" />
+                        <event name="OnDragOver" file="MainWnd.xml.lua" func="body_OnDragOver" />
+                        <event name="OnDrop" file="MainWnd.xml.lua" func="body_OnDrop" />
+                    </eventlist>
+                </obj>	
+			
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="MainWnd.xml.lua" func="MainWnd_OnInitControl" />
+			</eventlist>
+		</obj>
+	</objtreetemplate>
+	<hostwndtemplate id="ThunderCore.MainWnd" class="FrameHostWnd">
+		<attr>
+			<title>迅雷</title>
+			<layered>1</layered>
+			<left>200</left>
+			<top>100</top>
+			<!-- <width>1038</width><height>696</height> -->
+			<width>376</width>
+			<height>680</height>
+			<visible>1</visible>
+			<enable>1</enable>
+			<maxbox>1</maxbox>
+			<minbox>1</minbox>
+			<minwidth>364</minwidth>
+			<minheight>245</minheight>
+			<!-- <minwidth>812</minwidth><minheight>612</minheight> -->
+			<appwindow>1</appwindow>
+			<fps>30</fps>
+			<enabledrop>1</enabledrop>
+			<border>5,5,5,5</border>
+			<sysmenu>1</sysmenu>
+		</attr>
+		<eventlist>
+			<event name="OnSize" file="MainWnd.xml.lua" func="OnMainWndSize"/>
+			<event name="OnCreate" file="MainWnd.xml.lua" func="OnMainWndCreate" />
+			<event name="OnClose" file="MainWnd.xml.lua" func="OnMainWndClose"/>
+			<event name="OnLayeredChange" file="MainWnd.xml.lua" func="OnMainWndLayeredChange"/>
+		</eventlist>
+	</hostwndtemplate>
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->

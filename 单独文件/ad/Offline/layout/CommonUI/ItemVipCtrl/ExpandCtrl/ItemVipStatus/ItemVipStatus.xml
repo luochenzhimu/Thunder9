@@ -1,0 +1,100 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<xlue>
+	<!--会员加速-->
+	<control class="VipService.ItemVipStatus">
+		<attr_def>			
+		</attr_def>
+		<method_def>
+			<SetTaskId file = "ItemVipStatus.xml.lua" func = "SetTaskId" />
+			<OnStateChanged file = "ItemVipStatus.xml.lua" func = "OnStateChanged" />
+		</method_def>
+		<objtemplate>
+			<children>
+				
+				<!--加速状态-->
+				<obj id="accleratelayout" class="LayoutObject">
+					<attr>
+						<left>father.width-88</left>
+						<top>0</top>
+						<width>90</width>
+						<height>father.height</height>
+					</attr>
+					<children>	
+						<!--加速按钮-->
+						<obj id="vip.acc.btn" class="Thunder.Button">
+							<attr>
+								<left>24</left>
+								<top>(father.height-20)/2</top>
+								<width>64</width>
+								<height>20</height>
+								<Text>会员加速</Text>
+								<cursor>IDC_HAND</cursor>
+								<DisableTextColor>color.vip.acclerate.button.text.disable</DisableTextColor>
+								<TextColor>color.vip.acclerate.button.text.normal</TextColor>
+								<NormalBkgID>vip.acclerate.button.normal</NormalBkgID>
+								<DownBkgID>vip.acclerate.button.down</DownBkgID>
+								<DisableBkgID>vip.acclerate.button.disable</DisableBkgID>
+								<HoverBkgID>vip.acclerate.button.hover</HoverBkgID>
+								<ShowFocusRect>false</ShowFocusRect>
+							</attr>
+							<eventlist>
+								<event name="OnButtonMouseLeave" file="ItemVipStatus.xml.lua" func="OnButtonMouseLeave" />
+								<event name="OnButtonMouseMove" file="ItemVipStatus.xml.lua" func="OnButtonMouseMove" />
+								<event name="OnClick" file="ItemVipStatus.xml.lua" func="OnButtonClick" />
+							</eventlist>
+						</obj>
+						<obj id="novip.acc.btn" class="Thunder.Button">
+							<attr>
+								<left>0</left>
+								<top>3</top>
+								<width>father.width-2</width>
+								<height>father.height-3</height>
+								<!-- <Text>会员加速</Text> -->
+								<cursor>IDC_HAND</cursor>
+								<DisableTextColor>color.vip.acclerate.button.text.disable</DisableTextColor>
+								<TextColor>color.vip.acclerate.button.text.normal</TextColor>
+								<NormalBkgID>novip.acclerate.button.normal</NormalBkgID>
+								<DownBkgID>novip.acclerate.button.down</DownBkgID>
+								<DisableBkgID>novip.acclerate.button.disable</DisableBkgID>
+								<HoverBkgID>novip.acclerate.button.hover</HoverBkgID>
+								<ShowFocusRect>false</ShowFocusRect>
+								<visible>false</visible>
+							</attr>
+							<eventlist>
+								<event name="OnButtonMouseLeave" file="ItemVipStatus.xml.lua" func="OnButtonMouseLeave" />
+								<event name="OnButtonMouseMove" file="ItemVipStatus.xml.lua" func="OnButtonMouseMove" />
+								<event name="OnClick" file="ItemVipStatus.xml.lua" func="OnButtonClick" />
+							</eventlist>
+						</obj>
+
+						<!--加速状态-->
+						<obj id="statustext" class="TextObject">
+							<attr>
+								<valign>center</valign>
+								<halign>right</halign>
+								<endellipsis>1</endellipsis>
+								<left>-10</left>
+								<top>0</top>
+								<width>father.width+10</width>
+								<height>father.height</height>
+								<text></text>
+								<visible>0</visible>
+							</attr>
+							<eventlist>
+								<event name="OnMouseHover" file="ItemVipStatus.xml.lua" func="OnStatusMouseHover" />
+								<event name="OnMouseLeave" file="ItemVipStatus.xml.lua" func="OnStatusMouseLeave" />
+							</eventlist>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="ItemVipStatus.xml.lua" func="OnInitControl" />
+				<event name="OnDestroy" file="ItemVipStatus.xml.lua" func="OnDestroy" />
+			</eventlist>
+		</objtemplate>
+	</control>
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->

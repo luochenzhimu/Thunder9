@@ -1,0 +1,183 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<xlue>
+	<control class="Community.OnlinePanel">
+		<attr_def>
+		</attr_def>
+		<method_def>
+			<SetMiniMode file="OnlinePanel.xml.lua" func="SetMiniMode" /> 
+			<UpdateUserInfo file="OnlinePanel.xml.lua" func="UpdateUserInfo" />
+		</method_def>
+		<event_def>
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="bkg" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<children>
+						<!-- 头像 -->
+						<obj id="header" class="Community.UserHeader">
+							<attr>
+								<left>12</left>
+								<top>3</top>
+								<width>44</width>
+								<height>44</height>
+								<cursor>IDC_HAND</cursor>
+							</attr>
+							<eventlist>
+								<event name="OnMouseMove" file="OnlinePanel.xml.lua" func="HeaderBorder_OnMouseMove" />
+								<event name="OnMouseLeave" file="OnlinePanel.xml.lua" func="HeaderBorder_OnMouseLeave" />
+								<event name="OnLButtonDown" file="OnlinePanel.xml.lua" func="HeaderBorder_OnLButtonDown" />
+							</eventlist>
+						</obj>
+						
+						<obj id="info.layout" class="LayoutObject">
+							<attr>
+								<left>61</left>
+								<top>0</top>
+								<width>father.width-61</width>
+								<height>father.height</height>
+							</attr>
+							<children>
+								<!-- 昵称 -->
+								<obj id="nickname.text" class="Thunder.TextEmoji.Ctrl">
+									<attr>
+										<left>0</left>
+										<top>(father.height-16)/2-3</top>
+										<width>60</width>
+										<height>24</height>
+										<TextFontResID>font.userpanel.nickname.text</TextFontResID>
+										<TextColorResID>color.userpanel.nickname.nonvip</TextColorResID>
+										<cursor>IDC_HAND</cursor>
+                                        <EmojiWidth>18</EmojiWidth>
+                                        <EmojiHeight>18</EmojiHeight>
+                                        <TextHeight>15</TextHeight>
+									</attr>
+									<eventlist>
+										<event name="OnMouseMove" file="OnlinePanel.xml.lua" func="Nickname_OnMouseMove" />
+										<event name="OnMouseLeave" redirect="control:header" />
+										<event name="OnLButtonDown" file="OnlinePanel.xml.lua" func="NickName_OnLButtonDown" />
+									</eventlist>
+								</obj>
+								<!-- vip 等级图标-->
+								<obj id="viplevel.Seqimg" class="SeqImageObject">
+									<attr>
+										<left>0</left>
+										<top>(father.height-40)/2-10</top>
+										<width>47</width>
+										<height>40</height>
+										<visible>0</visible>
+										<drawmode>0</drawmode>	
+										<antialias>2</antialias>
+										<loop>0</loop>
+									</attr>
+										<children>
+										</children>
+								</obj>
+								<!-- vip 等级图标 -->
+								<obj id="viplevel.img" class="ImageObject">
+									<attr>
+										<left>0</left>
+										<top>(father.height-25)/2+1</top>
+										<width>47</width>
+										<height>25</height>
+										<visible>0</visible>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+									<children>
+										<obj id="viptip.bkg" class="TextureObject">
+											<attr>
+												<left>-50</left>
+												<top>father.height + 5</top>
+												<width></width>
+												<height></height>
+												<texture>texture.login.online.tip.bkg</texture>
+												<zorder>100000</zorder>
+											</attr>
+											<children>
+												<obj id="viptip.text" class="TextObject">
+													<attr>
+														<left>10</left>
+														<top>-1</top>
+														<width>father.width - 10</width>
+														<height>father.height</height>
+														<textcolor>color.login.online.tiptext</textcolor>
+														<multiline>1</multiline>
+														<halign>left</halign>
+														<valign>center</valign>
+													</attr>
+												</obj>
+											</children>
+										</obj>
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="OnlinePanel.xml.lua" func="VipLevelImg_OnLButtonDown" />
+										<event name="OnMouseMove" file="OnlinePanel.xml.lua" func="VipImage_OnMouseMove" />
+										<event name="OnMouseLeave" redirect="control:header" />
+									</eventlist>
+								</obj>
+								<!-- 年费会员图标 -->
+								<obj id="yearpay.img" class="SeqImageObject">
+									<attr>
+										<left>0</left>
+										<top>13+1</top>
+										<width>16</width>
+										<height>24</height>
+										<visible>0</visible>
+										<drawmode>0</drawmode>	
+										<antialias>2</antialias>
+										<loop>1</loop>
+										<cursor>IDC_HAND</cursor>
+									</attr>
+										<children>
+											<obj id="yeartip.bkg" class="TextureObject">
+												<attr>
+													<left>-50</left>
+													<top>father.height + 5</top>
+													<width></width>
+													<height></height>
+													<texture>texture.login.online.tip.bkg</texture>
+													<zorder>120000</zorder>
+												</attr>
+												<children>
+													<obj id="yeartip.text" class="TextObject">
+														<attr>
+															<left>10</left>
+															<top>-1</top>
+															<width>father.width - 10</width>
+															<height>father.height</height>
+															<textcolor>color.login.online.tiptext</textcolor>
+															<multiline>0</multiline>
+															<halign>left</halign>
+															<valign>center</valign>
+														</attr>
+													</obj>
+												</children>
+											</obj>
+										</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="OnlinePanel.xml.lua" func="YearPayImg_OnLButtonDown" />
+										<event name="OnMouseHover" file="OnlinePanel.xml.lua" func="YearPayImg_OnMouseHover" />
+										<event name="OnMouseLeave" file="OnlinePanel.xml.lua" func="YearPayImg_OnMouseLeave" />
+									</eventlist>
+								</obj>																
+							</children>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="OnlinePanel.xml.lua" func="OnInitControl" />
+				<event name="OnDestroy" file="OnlinePanel.xml.lua" func="OnDestroy" />
+				<event name="OnVisibleChange" file="OnlinePanel.xml.lua" func="OnVisibleChange" />
+			</eventlist>
+		</objtemplate>
+	</control>
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->

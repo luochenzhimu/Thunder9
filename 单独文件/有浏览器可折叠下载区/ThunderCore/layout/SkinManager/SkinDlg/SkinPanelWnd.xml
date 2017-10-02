@@ -1,0 +1,201 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<!-- 该文件中定义的就是迅雷9换肤的弹出面板 -->
+<xlue>
+	<objtreetemplate id="Thunder.SkinPanelWnd.Tree" class="ObjectTreeTemplate" templateid="BasicMsgBoxDlgTree">
+		
+		<obj id="msgboxdlg.ctrl" class="LayoutObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>690</width>
+				<height>484</height>
+			</attr>
+			
+			<children>
+				<obj id="msgboxdlg.border" class="LayoutObject">
+					<children>
+						<obj id="msgboxdlg.grep.bkg" class="TextureObject">
+							<attr>
+								<visible>0</visible>
+							</attr>
+						</obj>
+		
+						<obj id="msgboxdlg.bkg" class="TextureObject">
+							<children>
+								<obj id="msgboxdlg.caption" class="CaptionObject">
+									<children>
+										<obj id="msgboxdlg.title" class="TextObject">
+											<attr>
+												<text>个性化中心</text>
+											</attr>
+										</obj>
+										
+										<obj id="msgboxdlg.btn.close" class="Thunder.System.ButtonEx.Ctrl">
+											<eventlist>
+												<event name="OnClose" file="SkinPanelWnd.xml.lua" func="Close_OnClick" />
+											</eventlist>
+										</obj>
+
+									</children>
+								</obj>
+								
+								<!-- 皮肤提醒按钮 -->
+								<obj id="skinbutton" class="TextureObject">
+									<attr>
+										<left>20</left>
+										<top>34</top>
+										<width>100</width>
+										<height>30</height>
+										<texture>texture.skin.tab.down</texture>
+									</attr>
+									<children>
+										<!--obj id="skinico" class="ImageObject">
+											<attr>
+												<left>25</left>
+												<top>5</top>
+												<width>13</width>
+												<height>13</height>
+												<image>bitmap.skin.ico1</image>
+											</attr>
+										</obj-->
+										<obj id="skinText" class="TextObject">
+											<attr>
+												<left>35</left>
+												<top>6</top>
+												<width>30</width>
+												<height>14</height>
+												<text>皮肤</text>
+												<halign>center</halign>
+												<valign>center</valign>
+												<textcolor>system.white</textcolor>
+											</attr>
+										</obj>
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="SkinPanelWnd.xml.lua" func="SkinButton_OnLButtonDown" />
+										<event name="OnMouseEnter" file="SkinPanelWnd.xml.lua" func="SkinButton_OnMouseEnter" />
+										<event name="OnMouseLeave" file="SkinPanelWnd.xml.lua" func="SkinButton_OnMouseLeave" />
+									</eventlist>
+								</obj>
+								
+								<!-- 头像提醒按钮 -->
+								<obj id="headerbutton" class="TextureObject">
+									<attr>
+										<left>20+100</left>
+										<top>34</top>
+										<width>100</width>
+										<height>30</height>
+										<texture>texture.skin.tab.down</texture>
+									</attr>
+									<children>
+										<obj id="headerText" class="TextObject">
+											<attr>
+												<left>35</left>
+												<top>6</top>
+												<width>30</width>
+												<height>14</height>
+												<text>头像</text>
+												<halign>center</halign>
+												<valign>center</valign>
+												<textcolor>system.white</textcolor>
+											</attr>
+										</obj>
+									</children>
+									<eventlist>
+										<event name="OnLButtonDown" file="SkinPanelWnd.xml.lua" func="HeaderButton_OnLButtonDown" />
+										<event name="OnMouseEnter" file="SkinPanelWnd.xml.lua" func="HeaderButton_OnMouseEnter" />
+										<event name="OnMouseLeave" file="SkinPanelWnd.xml.lua" func="HeaderButton_OnMouseLeave" />
+									</eventlist>
+								</obj>
+																
+								<obj id="skin.split" class="ImageObject">
+									<attr>
+										<left>2</left>
+										<top>64</top>
+										<width>father.width-4</width>
+										<height>1</height>
+										<image>bitmap.skin.split</image>
+										<drawmode>1</drawmode>
+									</attr>
+								</obj>
+								
+								
+								<!-- 用于存放换肤图片的容器 -->
+								<obj id="SkinContainer" class="Thunder.SkinPanelManager">
+									<attr>
+										<left>20</left>
+										<top>79</top>
+										<width>father.width-40</width>
+										<height>father.height-93</height>
+									</attr>
+								</obj>
+								
+								<obj id="headerContainer.botton.bkg" class="TextureObject">
+									<attr>
+										<left>2</left>
+										<top>father.height - 54</top>
+										<width>father.width -4</width>
+										<height>50</height>
+										<texture>texture.header.container.bkg</texture>
+									</attr>
+									<children>
+										
+									</children>
+									<eventlist>
+										
+									</eventlist>
+								</obj>
+								<!-- 用于存放头像的容器 -->
+								<obj id="headerContainer" class="Thunder.HeaderManager.ctrl">
+									<attr>
+										<left>20</left>
+										<top>79</top>
+										<width>father.width-40</width>
+										<height>father.height-93</height>
+									</attr>
+								</obj>
+										
+							</children>
+						</obj>
+					</children>
+					<eventlist>
+						<event name="OnInitControl" file="SkinPanelWnd.xml.lua" func="OnInitControl" />
+					</eventlist>
+				</obj>
+
+			</children>
+		</obj>
+		<eventlist>
+			<event name="OnBindHostWnd" file="SkinPanelWnd.xml.lua" func="OnBindHostWnd" />
+		</eventlist>
+	</objtreetemplate>
+
+
+	<hostwndtemplate id="Thunder.SkinPanel.Wnd" class="FrameHostWnd">
+		<attr>
+			<title>皮肤面板</title>
+			<layered>1</layered>
+			<left>200</left> 
+			<top>100</top>
+			<width>690</width>
+			<height>484</height>
+			<topmost>0</topmost>
+			<visible>1</visible>
+			<enable>1</enable>
+			<maxbox>1</maxbox>
+			<minbox>1</minbox>
+			<minwidth>652</minwidth>
+			<minheight>544</minheight>
+			<appwindow>0</appwindow>
+			<fps>30</fps>
+		</attr>
+		<eventlist>
+			<event name="OnCreate" file="SkinPanelWnd.xml.lua" func="Wnd_OnCreate" />
+			<event name="OnFocusChange" file="SkinPanelWnd.xml.lua" func="Wnd_OnFocusChange" />
+			<event name="OnDestroy" file="SkinPanelWnd.xml.lua" func="OnDestroy" />
+		</eventlist>
+	</hostwndtemplate>
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->

@@ -1,0 +1,396 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<xlue>
+	<resource>
+		<!-- 以下是登陆面板 logindlg 专用资源 -->
+		<texture id="texture.logindlg.bkg" type="NineInOne" image="community/texture.logindlg.bkg.png" />
+		<gif id="gif.logindlg.navigate.loading" file="community/gif.logindlg.navigate.loading.gif" />
+		<gif id="gif.userinfopanel.vipyear" file="community/userinfopanel.gif.vipyear.gif" />
+		<gif id="gif.userinfopanel.novipyear" file="community/userinfopanel.gif.vipyear.gif" />
+		<bitmap id="bitmap.logindlg.error.icon" path="community/bitmap.logindlg.error.icon.png" />
+		<bitmap id="login.up.bkg" path="community/login.up.bkg.png" />
+		
+		<bitmap id="bitmap.kuainiao.vip" path="community/bitmap.kuainiao.vip.png" />
+		<imagelist id="imagelist.logindlg.close" splitter="1" vertical="0" varyblock ="1" image="community/imagelist.logindlg.close.png" />
+		<bitmap id="bitmap.logindlg.close.normal" imagelist="imagelist.logindlg.close" index="1" />
+		<bitmap id="bitmap.logindlg.close.hover"  imagelist="imagelist.logindlg.close" index="2" />
+		<bitmap id="bitmap.logindlg.close.down"   imagelist="imagelist.logindlg.close" index="3" />
+		
+		<imagelist id="imagelist.logindlg.setting" splitter="1" vertical="0" varyblock="1" image="community/imagelist.logindlg.setting.png" />
+		<texture id="texture.logindlg.setting.normal" imagelist="imagelist.logindlg.setting" index="1" />
+		<texture id="texture.logindlg.setting.hover"  imagelist="imagelist.logindlg.setting" index="2" />
+		<texture id="texture.logindlg.setting.down"   imagelist="imagelist.logindlg.setting" index="3" />
+		
+		<texture id="texture.logindlg.accountPwd.bkg" type="NineInOne" image="community/texture.logindlg.accountPwd.bkg.png" />
+		<texture id="texture.logindlg.edit.splitter" type="ThreeInOneH" image="community/texture.logindlg.edit.splitter.png" />
+		<texture id="texture.logindlg.edit.bkg" type="NineInOne" image="community/texture.logindlg.edit.bkg.png" />
+		<texture id="texture.logindlg.combo.item.bkg" type="ThreeInOneH" image="community/texture.logindlg.combo.item.bkg.png" />
+		<font id="font.logindlg.edit.pwd" height="12" facename="defaultfont" />
+		<color id="color.logindlg.edit.hint" value="#999999" />
+		
+		<imagelist id="imagelist.logindlg.checkbox" vertical="0" splitter="1" varyblock="1" image="community/imagelist.logindlg.checkbox.png" />
+		<bitmap id="bitmap.logindlg.checkbox.box.normal" imagelist="imagelist.logindlg.checkbox" index="1" />
+		<bitmap id="bitmap.logindlg.checkbox.box.hover" imagelist="imagelist.logindlg.checkbox" index="2" />
+		<bitmap id="bitmap.logindlg.checkbox.tick.normal" imagelist="imagelist.logindlg.checkbox" index="3" />
+		
+		<imagelist id="imagelist.logindlg.loginbtn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.logindlg.loginbtn.png" />
+		<texture id="texture.logindlg.loginbtn.normal" type="NineInOne" imagelist="imagelist.logindlg.loginbtn" index="1" />
+		<texture id="texture.logindlg.loginbtn.hover" type="NineInOne" imagelist="imagelist.logindlg.loginbtn" index="2" />
+		<texture id="texture.logindlg.loginbtn.down" type="NineInOne" imagelist="imagelist.logindlg.loginbtn" index="3" />
+		<texture id="texture.logindlg.loginbtn.disable" type="NineInOne" imagelist="imagelist.logindlg.loginbtn" index="4" />
+		<font id="font.logindlg.loginbtn" height="16" facename="defaultfont" />
+		
+		<imagelist id="imagelist.logindlg.phone.icon" vertical="0" splitter="1" varyblock="1" image="community/imagelist.logindlg.phone.icon.png" />
+		<bitmap id="bitmap.logindlg.phone.icon.normal" imagelist="imagelist.logindlg.phone.icon" index="1" />
+		<bitmap id="bitmap.logindlg.phone.icon.hover" imagelist="imagelist.logindlg.phone.icon" index="2" />
+		<bitmap id="bitmap.logindlg.phone.icon.down" imagelist="imagelist.logindlg.phone.icon" index="3" />
+		<color id="color.logindlg.phone.text" value="#666666" />
+		<color id="color.logindlg.phone.text.hover" value="#41a1ff" />
+		
+		<imagelist id="imagelist.logindlg.weibo.icon" vertical="0" splitter="1" varyblock="1" image="community/imagelist.logindlg.weibo.icon.png" />
+		<bitmap id="bitmap.logindlg.weibo.icon.normal" imagelist="imagelist.logindlg.weibo.icon" index="1" />
+		<bitmap id="bitmap.logindlg.weibo.icon.hover" imagelist="imagelist.logindlg.weibo.icon" index="2" />
+		<bitmap id="bitmap.logindlg.weibo.icon.down" imagelist="imagelist.logindlg.weibo.icon" index="3" />
+		
+		<imagelist id="imagelist.logindlg.weixin.icon" vertical="0" splitter="1" varyblock="1" image="community/imagelist.logindlg.weixin.icon.png" />
+		<bitmap id="bitmap.logindlg.weixin.icon.normal" imagelist="imagelist.logindlg.weixin.icon" index="1" />
+		<bitmap id="bitmap.logindlg.weixin.icon.hover" imagelist="imagelist.logindlg.weixin.icon" index="2" />
+		<bitmap id="bitmap.logindlg.weixin.icon.down" imagelist="imagelist.logindlg.weixin.icon" index="3" />
+		
+		<imagelist id="imagelist.logindlg.coop.icon" vertical="0" splitter="1" varyblock="1" image="community/imagelist.logindlg.coop.icon.png" />
+		<bitmap id="bitmap.logindlg.coop.icon.normal" imagelist="imagelist.logindlg.coop.icon" index="1" />
+		<bitmap id="bitmap.logindlg.coop.icon.hover" imagelist="imagelist.logindlg.coop.icon" index="2" />
+		<bitmap id="bitmap.logindlg.coop.icon.down" imagelist="imagelist.logindlg.coop.icon" index="3" />
+		
+		<imagelist id="imagelist.logindlg.return.icon" vertical="0" splitter="1" varyblock="1" image="community/imagelist.logindlg.return.icon.png" />
+		<bitmap id="bitmap.logindlg.return.icon.normal" imagelist="imagelist.logindlg.return.icon" index="1" />
+		<bitmap id="bitmap.logindlg.return.icon.hover" imagelist="imagelist.logindlg.return.icon" index="2" />
+		<bitmap id="bitmap.logindlg.return.icon.down" imagelist="imagelist.logindlg.return.icon" index="3" />
+		
+		<texture id="texture.logindlg.splitter" type="Stretch" image="community/texture.logindlg.splitter.png" />
+		
+		<imagelist id="imagelist.logindlg.register.mail" vertical="0" splitter="1" varyblock="1" image="community/imagelist.logindlg.register.mail.png" />
+		<bitmap id="bitmap.logindlg.register.mail.normal" imagelist="imagelist.logindlg.register.mail" index="1" />
+		<bitmap id="bitmap.logindlg.register.mail.hover" imagelist="imagelist.logindlg.register.mail" index="2" />
+		<imagelist id="imagelist.logindlg.register.phone" vertical="0" splitter="1" varyblock="1" image="community/imagelist.logindlg.register.phone.png" />
+		<bitmap id="bitmap.logindlg.register.phone.normal" imagelist="imagelist.logindlg.register.phone" index="1" />
+		<bitmap id="bitmap.logindlg.register.phone.hover" imagelist="imagelist.logindlg.register.phone" index="2" />
+		<font id="font.logindlg.register.tab.text" height="13" facename="defaultfont" />
+		<font id="font.logindlg.registerEx.tab.text" height="12" facename="defaultfont" />
+		
+		<imagelist id="imagelist.deleteuser.btn" splitter="1" vertical="0" varyblock ="1" image="community/imagelist.deleteuser.btn.png" />
+		<bitmap id="bitmap.deleteuser.btn.normal" imagelist="imagelist.deleteuser.btn" index="1" />
+		<bitmap id="bitmap.deleteuser.btn.hover"  imagelist="imagelist.deleteuser.btn" index="2" />
+		<bitmap id="bitmap.deleteuser.btn.down"   imagelist="imagelist.deleteuser.btn" index="3" />
+		
+		<color id="color.logindlg.register.select" value="#0f97ff" />
+		<color id="color.logindlg.register.normal" value="#41a1ff" />
+		<color id="color.logindlg.forgetpwd.normal" value="#666666" />
+		<color id="color.logindlg.forgetpwd.hover" value="#41a1ff" />
+		<color id="color.logindlg.rememberpwd" value="#666666" />
+		<color id="color.logindlg.autologin" value="#666666" />
+		<color id="color.logindlg.title" value="#41a1ff" />
+		<color id="color.logindlg.subtitle" value="#666666" />
+		<font id="font.logindlg.title" height="14" facename="defaultfont" />
+		<font id="font.logindlg.wenan.text" height="17" facename="微软雅黑" />
+		
+		<bitmap id="bitmap.fallinedlg.expand.icon" path="community/bitmap.fallinedlg.expand.icon.png" />
+		<bitmap id="bitmap.logindlg.navigate.error" path="community/bitmap.logindlg.navigate.error.png" />
+		
+		<!-- 以下是用户面板 userpanel 专用资源 -->
+		<bitmap id="bitmap.userpanel.header.border" path="community/bitmap.userpanel.header.border.png" />
+		<bitmap id="bitmap.userpanel.header.mask" path="community/bitmap.userpanel.header.mask.png" />
+		<bitmap id="bitmap.userpanel.unlogin.header" path="community/bitmap.unlogin.header.png" />
+		<bitmap id="bitmap.userpanel.unlogin.header.big" path="community/bitmap.unlogin.header.big.png" />
+		<font id="font.userpanel.nickname.text" height="15" facename="defaultfont" />
+		<font id="font.userpanel.textlink.hover" height="15" underline="1" facename="defaultfont" />
+		<font id="font.register.title" height="20" facename="defaultfont" />
+		<color id="color.register.title" value="#1a1a1a" />
+		<font id="font.userpanel.nickname.ex.text" height="14"  facename="defaultfont" />
+		<font id="font.userpanel.user.level" height="12" facename="defaultfont" />
+		<font id="font.miyin.title" height="20" facename="defaultfont" />
+		<font id="font.vipinfo.text" height="13"  facename="defaultfont" />
+		<font id="font.userinfopanel.activity.text" height="13"  facename="defaultfont" />
+		<color id="color.vipinfo.text" value="#4c4c4c" />
+		<color id="color.vipinfo.btn.text" value="#ff4848" />
+		<color id="color.userinfopanel.activity.text" value="#ffffff" />
+		
+		<texture id="texture.offline.tips.bkg" type="NineInOne" image="community/texture.offline.tips.bkg.png" />
+		<bitmap id="bitmap.offline.tips.bkg.arrow.up" path="community/bitmap.offline.tips.bkg.arrow.up.png" />
+		<bitmap id="bitmap.offline.tips.icon" path="community/bitmap.offline.tips.icon.png" />
+		<texture id="texture.offline.tips.bkg.bottom" type="NineInOne" image="community/texture.offline.tips.bkg.bottom.png" />
+		<font id="font.offline.tips.title" height="12" weight="bold" facename="defaultfont" />
+		
+		<imagelist id="imagelist.userinfopanel.activity.none.btn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.userinfopanel.activity.none.btn.png" />
+		<texture id="texture.userinfopanel.activity.none.btn.normal" type="Stretch" imagelist="imagelist.userinfopanel.activity.none.btn" index="1" />
+		<texture id="texture.userinfopanel.activity.none.btn.hover" type="Stretch" imagelist="imagelist.userinfopanel.activity.none.btn" index="2" />
+		<texture id="texture.userinfopanel.activity.none.btn.down" type="Stretch" imagelist="imagelist.userinfopanel.activity.none.btn" index="3" />
+		
+		<imagelist id="imagelist.userinfopanel.activity.exist.btn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.userinfopanel.activity.exist.btn.png" />
+		<texture id="texture.userinfopanel.activity.exist.btn.normal" type="Stretch" imagelist="imagelist.userinfopanel.activity.exist.btn" index="1" />
+		<texture id="texture.userinfopanel.activity.exist.btn.hover" type="Stretch" imagelist="imagelist.userinfopanel.activity.exist.btn" index="2" />
+		<texture id="texture.userinfopanel.activity.exist.btn.down" type="Stretch" imagelist="imagelist.userinfopanel.activity.exist.btn" index="3" />
+		
+		<imagelist id="imagelist.userinfopanel.vipinfo.btn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.userinfopanel.vipinfo.btn.png" />
+		<texture id="texture.userinfopanel.vipinfo.btn.normal" type="NineInOne" imagelist="imagelist.userinfopanel.vipinfo.btn" index="1" />
+		<texture id="texture.userinfopanel.vipinfo.btn.hover" type="NineInOne" imagelist="imagelist.userinfopanel.vipinfo.btn" index="2" />
+		<texture id="texture.userinfopanel.vipinfo.btn.down" type="NineInOne" imagelist="imagelist.userinfopanel.vipinfo.btn" index="3" />
+		
+		<!-- 此处颜色值定义被移到了color.xml中 -->
+		<!--color id="color.userpanel.nickname" value="#1a1a1a" alpha="255" />
+		<color id="color.userpanel.nickname.hover" value="#10a0fc" alpha="255" />
+		<color id="color.userpanel.nickname.vip" value="RGBA(255,0,0,255)" />
+		<color id="color.userpanel.nickname.nonvip" value="#1a1a1a" alpha="255"/>
+		<color id="color.userpanel.nickname.offline" value="#999999" alpha="255"/>
+		<color id="color.userpanel.loging.cancel" value="#999999" alpha="255"/>
+		<color id="color.userpanel.loging.cancel.hover" value="#10a0fc" alpha="255"/-->
+		
+		<color id="color.userpanel.nickname" value="#0f97ff" alpha="255" />
+		<color id="color.userpanel.nickname.hover" value="#10a0fc" alpha="255" />
+		<color id="color.userpanel.nickname.vip" value="RGBA(255,0,0,255)" />
+		<color id="color.userpanel.nickname.nonvip" value="#0f97ff" alpha="255"/>
+		<color id="color.userpanel.nickname.ex.nonvip" value="#ffffff" alpha="255"/>
+		<color id="color.userpanel.nickname.offline" value="#999999" alpha="255"/>
+		<color id="color.userpanel.loging.cancel" value="#999999" alpha="255"/>
+		<color id="color.userpanel.loging.cancel.hover" value="#10a0fc" alpha="255"/>
+		
+		<bitmap id="bitmap.community.header.unlogin" path="community/bitmap.community.header.unlogin.png" />
+		<bitmap id="bitmap.community.header.mask.big" path="community/bitmap.community.header.mask.big.png" />
+		<bitmap id="bitmap.community.header.mask.normal" path="community/bitmap.community.header.mask.normal.png" />
+		<bitmap id="bitmap.community.header.mask.small" path="community/bitmap.community.header.mask.small.png" />
+		
+		<!-- 用户默认头像 -->
+		<bitmap id="bitmap.userpanel.default.header" path="community/bitmap.userpanel.default.header.png" />
+		<bitmap id="bitmap.userpanel.default.header.small" path="community/bitmap.userpanel.default.header.small.png" />
+		
+		<!-- 用户登录头像 -->
+		<bitmap id="bitmap.logindlg.userheader.header.bkg" path="community/bitmap.logindlg.userheader.bkg.png"/>
+		<bitmap id="bitmap.logindlg.userheader.header.mask" path="community/bitmap.logindlg.userheader.header.mask.png"/>
+		<bitmap id="bitmap.logindlg.userheader.default.header" path="community/bitmap.logindlg.userheader.default.header.png"/>
+		
+		<bitmap id="bitmap.LogInUserName.icon" path="community/bitmap.LogInUserName.icon.png" />
+		<bitmap id="bitmap.LogInPassword.icon" path="community/bitmap.LogInPassword.icon.png" />
+		
+		<!-- 联合登录左右扩展按钮 -->
+		<imagelist id="imagelist.cooperatorLogIn.left.btn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.cooperatorLogIn.left.btn.png" />
+		<bitmap id="bitmap.cooperatorLogIn.left.btn.normal" imagelist="imagelist.cooperatorLogIn.left.btn" index="1" />
+		<bitmap id="bitmap.cooperatorLogIn.left.btn.hover" imagelist="imagelist.cooperatorLogIn.left.btn" index="2" />
+		<bitmap id="bitmap.cooperatorLogIn.left.btn.down" imagelist="imagelist.cooperatorLogIn.left.btn" index="3" />
+		<bitmap id="bitmap.cooperatorLogIn.left.btn.disable" imagelist="imagelist.cooperatorLogIn.left.btn" index="4" />
+		
+		<imagelist id="imagelist.cooperatorLogIn.right.btn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.cooperatorLogIn.right.btn.png" />
+		<bitmap id="bitmap.cooperatorLogIn.right.btn.normal" imagelist="imagelist.cooperatorLogIn.right.btn" index="1" />
+		<bitmap id="bitmap.cooperatorLogIn.right.btn.hover" imagelist="imagelist.cooperatorLogIn.right.btn" index="2" />
+		<bitmap id="bitmap.cooperatorLogIn.right.btn.down" imagelist="imagelist.cooperatorLogIn.right.btn" index="3" />
+		<bitmap id="bitmap.cooperatorLogIn.right.btn.disable" imagelist="imagelist.cooperatorLogIn.right.btn" index="4" />
+		
+		<bitmap id="bitmap.cooperatorLogIn.phone.icon" path="community/bitmap.cooperatorLogIn.phone.icon.png" />
+
+		<imagelist id="imagelist.cooperatorLogIn.bkg" vertical="0" splitter="1" varyblock="1" image="community/imagelist.cooperatorLogIn.bkg.png" />
+		<texture id="texture.cooperatorLogIn.bkg.normal" imagelist="imagelist.cooperatorLogIn.bkg" index="1" />
+		<texture id="texture.cooperatorLogIn.bkg.hover" imagelist="imagelist.cooperatorLogIn.bkg" index="2" />
+		<texture id="texture.cooperatorLogIn.bkg.down" imagelist="imagelist.cooperatorLogIn.bkg" index="3" />
+		
+		<!-- 普通 vip 图标 -->
+		<imagelist id="imagelist.viplevel.normal" vertical="0" splitter="1" varyblock="1" image="community/imagelist.viplevel.normal.png" />
+		<bitmap id="bitmap.viplevel.normal0" imagelist="imagelist.viplevel.normal" index="1" />
+		<bitmap id="bitmap.viplevel.normal1" imagelist="imagelist.viplevel.normal" index="2" />
+		<bitmap id="bitmap.viplevel.normal2" imagelist="imagelist.viplevel.normal" index="3" />
+		<bitmap id="bitmap.viplevel.normal3" imagelist="imagelist.viplevel.normal" index="4" />
+		<bitmap id="bitmap.viplevel.normal4" imagelist="imagelist.viplevel.normal" index="5" />
+		<bitmap id="bitmap.viplevel.normal5" imagelist="imagelist.viplevel.normal" index="6" />
+		<bitmap id="bitmap.viplevel.normal6" imagelist="imagelist.viplevel.normal" index="7" />
+		<!-- 普通 vip 失效图标 -->
+		<imagelist id="imagelist.viplevel.normal.invalid" vertical="0" splitter="1" varyblock="1" image="community/imagelist.viplevel.super.png" />
+		<bitmap id="bitmap.viplevel.normal0.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.normal1.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.normal2.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.normal3.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.normal4.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.normal5.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.normal6.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<!-- 白金 vip 图标 -->
+		<imagelist id="imagelist.viplevel.pt" vertical="0" splitter="1" varyblock="1" image="community/imagelist.viplevel.pt.png" />
+		<bitmap id="bitmap.viplevel.pt0" imagelist="imagelist.viplevel.pt" index="1" />
+		<bitmap id="bitmap.viplevel.pt1" imagelist="imagelist.viplevel.pt" index="2" />
+		<bitmap id="bitmap.viplevel.pt2" imagelist="imagelist.viplevel.pt" index="3" />
+		<bitmap id="bitmap.viplevel.pt3" imagelist="imagelist.viplevel.pt" index="4" />
+		<bitmap id="bitmap.viplevel.pt4" imagelist="imagelist.viplevel.pt" index="5" />
+		<bitmap id="bitmap.viplevel.pt5" imagelist="imagelist.viplevel.pt" index="6" />
+		<bitmap id="bitmap.viplevel.pt6" imagelist="imagelist.viplevel.pt" index="7" />
+		<bitmap id="bitmap.viplevel.pt7" imagelist="imagelist.viplevel.pt" index="8" />
+		<!-- 白金 vip 失效图标 -->
+		<imagelist id="imagelist.viplevel.pt.invalid" vertical="0" splitter="1" varyblock="1" image="community/imagelist.viplevel.super.png" />
+		<bitmap id="bitmap.viplevel.pt0.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.pt1.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.pt2.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.pt3.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.pt4.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.pt5.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.pt6.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.pt7.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<!-- 超级 vip 图标 -->
+		<imagelist id="imagelist.viplevel.super" vertical="0" splitter="1" varyblock="1" image="community/imagelist.viplevel.super.png" />
+		<bitmap id="bitmap.viplevel.super0" imagelist="imagelist.viplevel.super" index="1" />
+		<bitmap id="bitmap.viplevel.super1" imagelist="imagelist.viplevel.super" index="2" />
+		<bitmap id="bitmap.viplevel.super2" imagelist="imagelist.viplevel.super" index="3" />
+		<bitmap id="bitmap.viplevel.super3" imagelist="imagelist.viplevel.super" index="4" />
+		<bitmap id="bitmap.viplevel.super4" imagelist="imagelist.viplevel.super" index="5" />
+		<bitmap id="bitmap.viplevel.super5" imagelist="imagelist.viplevel.super" index="6" />
+		<bitmap id="bitmap.viplevel.super6" imagelist="imagelist.viplevel.super" index="7" />
+		<bitmap id="bitmap.viplevel.super7" imagelist="imagelist.viplevel.super" index="8" />
+		<!-- 超级 vip 失效图标 -->
+		<imagelist id="imagelist.viplevel.super.invalid" vertical="0" splitter="1" varyblock="1" image="community/imagelist.viplevel.super.png" />
+		<bitmap id="bitmap.viplevel.super0.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.super1.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.super2.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.super3.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.super4.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.super5.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.super6.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		<bitmap id="bitmap.viplevel.super7.invalid" imagelist="imagelist.viplevel.super" index="8" />
+		
+		<!-- 年费会员图标 -->
+		<imagelist id="imagelist.userpanel.yearpay" vertical="0" splitter="1" varyblock="1" image="community/imagelist.userpanel.yearpay.png" />
+		<bitmap id="bitmap.userpanel.yearpay" imagelist="imagelist.userpanel.yearpay" index="1" />
+		<bitmap id="bitmap.userpanel.yearpay.invalid" imagelist="imagelist.userpanel.yearpay" index="2" />
+		
+		<!-- 以下是 userinfopanel(用户信息面板) 的专用资源 -->
+		<bitmap id="bitmap.userinfopanel.header.mask" path="community/bitmap.userinfopanel.header.mask.png" />
+		<font id="font.userinfopanel.nickname.text" height="15" facename="defaultfont" />
+		<font id="font.userinfopanel.viplevel.text" height="10" facename="Arial" />
+		<color id="color.userinfopanel.viplevel.text" value="#923400" />
+		<imagelist id="imagelist.userinfopanel.btn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.userinfopanel.btn.png" />
+		<texture id="texture.userinfopanel.btn.normal" type="NineInOne" imagelist="imagelist.userinfopanel.btn" index="1" />
+		<texture id="texture.userinfopanel.btn.hover" type="NineInOne" imagelist="imagelist.userinfopanel.btn" index="2" />
+		<texture id="texture.userinfopanel.btn.down" type="NineInOne" imagelist="imagelist.userinfopanel.btn" index="3" />
+		<texture id="texture.userinfopanel.btn.disable" type="NineInOne" imagelist="imagelist.userinfopanel.btn" index="4" />
+		<bitmap id="bitmap.userinfopanel.levelup" path="community/bitmap.userinfopanel.levelup.png" />
+		<bitmap id="bitmap.userinfopanel.highestlevel" path="community/bitmap.userinfopanel.highestlevel.png" />
+		<texture id="texture.userinfopanel.splitter.v" type="ThreeInOneV" image="community/texture.userinfopanel.splitter.v.png" />
+		<texture id="texture.userinfopanel.splitter.h" type="ThreeInOneH" image="community/texture.userinfopanel.splitter.h.png" />
+		<color id="color.userinfopanel.expiredate.text" value="#999999" />
+		<color id="color.userinfopanel.expiredate.num" value="#666666" />
+		<color id="color.userinfopanel.logout.ex.link" value="#999999" />
+		<bitmap id="bitmap.userinfopanel.ad.icon" path="community/bitmap.userinfopanel.ad.icon.png" />
+		<bitmap id="bitmap.userinfopanel.bkg" path="community/bitmap.userinfopanel.bkg.png" />
+		<texture id="texture.userinfopanel.userlevel.bkg" type="NineInOne" image="community/texture.userinfopanel.userlevel.bkg.png" />
+		<font id="font.userinfopanel.ranknum" height="12" weight="bold" facename="defaultfont" />
+		
+		<imagelist id="imagelist.userinfopanel.phone" splitter="1" vertical="0" varyblock ="1" image="community/imagelist.userinfopanel.phone.png" />
+		<bitmap id="bitmap.userinfopanel.phone.normal" imagelist="imagelist.userinfopanel.phone" index="1" />
+		<bitmap id="bitmap.userinfopanel.phone.hover"  imagelist="imagelist.userinfopanel.phone" index="2" />
+		<bitmap id="bitmap.userinfopanel.phone.down"  imagelist="imagelist.userinfopanel.phone" index="3" />
+		
+		
+		<imagelist id="imagelist.userlevel" vertical="0" splitter="1" varyblock="1" image="community/imagelist.userlevel.png" />
+		<bitmap id="bitmap.userlevel.lv" imagelist="imagelist.userlevel" index="1" />
+		<bitmap id="bitmap.userlevel.1" imagelist="imagelist.userlevel" index="2" />
+		<bitmap id="bitmap.userlevel.2" imagelist="imagelist.userlevel" index="3" />
+		<bitmap id="bitmap.userlevel.3" imagelist="imagelist.userlevel" index="4" />
+		<bitmap id="bitmap.userlevel.4" imagelist="imagelist.userlevel" index="5" />
+		<bitmap id="bitmap.userlevel.5" imagelist="imagelist.userlevel" index="6" />
+		<bitmap id="bitmap.userlevel.6" imagelist="imagelist.userlevel" index="7" />
+		<bitmap id="bitmap.userlevel.7" imagelist="imagelist.userlevel" index="8" />
+		<bitmap id="bitmap.userlevel.8" imagelist="imagelist.userlevel" index="9" />
+		<bitmap id="bitmap.userlevel.9" imagelist="imagelist.userlevel" index="10" />
+		<bitmap id="bitmap.userlevel.0" imagelist="imagelist.userlevel" index="11" />
+		
+		<bitmap id="bitmap.userinfopanel.sign.check" path="community/bitmap.userinfopanel.sign.check.png" />
+		<font id="font.userinfopanel.sign.score" height="14" weight="bold" facename="defaultfont"/>
+		<color id="color.login.up.text" value="#176091" />
+		
+		<texture id="texture.userinfopanel.userinfo.bkg" type="ThreeInOneH" image="community/texture.userinfopanel.userinfo.bkg.png" />  
+		<bitmap id="bitmap.userinfo.panel.level.icon" path="community/bitmap.userinfo.panel.level.icon.png" />
+		<bitmap id="bitmap.userinfo.panel.uplevel.icon" path="community/bitmap.userinfo.panel.uplevel.icon.png" />
+		<bitmap id="bitmap.userinfo.panel.globalRank.icon" path="community/bitmap.userinfo.panel.globalRank.icon.png" />
+		
+		<!-- 以下是个人资料面板专用资源 -->
+		<bitmap id="bitmap.community.recommendavatar.selected.icon" path="community/bitmap.community.recommendavatar.selected.icon.png" />
+		<texture id="texture.community.avatarmodifier.default.img" path="community/texture.community.avatarmodifier.default.img.png" />
+		<texture id="texture.community.avatarmodify.img.bkg" path="community/texture.community.avatarmodify.img.bkg.png" />
+		<texture id="texture.community.avatarmodify.region.frame" type="NineInOne" path="community/texture.community.avatarmodify.region.frame.png" />
+		<texture id="texture.community.avatarmodify.region.circle" path="community/texture.community.avatarmodify.region.circle.png" />
+		<texture id="texture.community.avatarmodify.region.shadow" path="community/texture.community.avatarmodify.region.shadow.png" />
+		<bitmap id="bitmap.community.avatarmodify.dotline.h" path="community/bitmap.community.avatarmodify.dotline.h.png" />
+		<bitmap id="bitmap.community.avatarmodify.dotline.v" path="community/bitmap.community.avatarmodify.dotline.v.png" />
+		<bitmap id="bitmap.community.avatarmodifier.frame.dot" path="community/bitmap.community.avatarmodifier.frame.dot.png" />
+		<bitmap id="bitmap.community.avatarmodify.avatar.hover" path="community/bitmap.community.avatarmodify.avatar.hover.png" />
+		<imagelist id="imagelist.avatarmodifier.add.btn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.avatarmodifier.add.btn.png" />
+		<texture id="texture.avatarmodifier.add.btn.normal" type="NineInOne" imagelist="imagelist.avatarmodifier.add.btn" index="1" />
+		<texture id="texture.avatarmodifier.add.btn.hover" type="NineInOne" imagelist="imagelist.avatarmodifier.add.btn" index="2" />
+		<texture id="texture.avatarmodifier.add.btn.down" type="NineInOne" imagelist="imagelist.avatarmodifier.add.btn" index="3" />
+		<texture id="texture.avatarmodifier.add.btn.disable" type="NineInOne" imagelist="imagelist.avatarmodifier.add.btn" index="4" />
+		
+		<imagelist id="imagelist.community.avatarmodify.edit" vertical="0" splitter="1" varyblock="1" image="community/imagelist.community.avatarmodify.edit.normal.png" />
+		<bitmap id="bitmap.community.avatarmodify.edit.normal" imagelist="imagelist.community.avatarmodify.edit" index="1" />
+		<bitmap id="bitmap.community.avatarmodify.edit.hover" imagelist="imagelist.community.avatarmodify.edit" index="2" />
+		<color id="color.community.avatarmodify.edit.normal" value="#666666" />
+		<color id="color.community.avatarmodify.edit.hover" value="#41a1ff" />
+		<color id="color.login.online.tiptext" value="RGBA(55,55,55,255)" />
+		<texture id="texture.login.online.tip.bkg" type="NineInOne" image="community\online_bkg_tip.png" />
+        
+        <!-- 新的登录面板相关资源 -->
+        <texture id="texture.cooperatorloginmenu.bkg" type="NineInOne" image="community\texture.cooperatorloginmenu.bkg.png" />
+        
+        <imagelist id="imagelist.cooperatorlogin.more" vertical="0" splitter="1" varyblock="1" image="community/imagelist.cooperatorlogin.more.png" />
+		<bitmap id="bitmap.cooperatorlogin.more.normal" imagelist="imagelist.cooperatorlogin.more" index="1" />
+		<bitmap id="bitmap.cooperatorlogin.more.hover" imagelist="imagelist.cooperatorlogin.more" index="2" />
+        <bitmap id="bitmap.cooperatorlogin.more.down" imagelist="imagelist.cooperatorlogin.more" index="3" />
+        <bitmap id="bitmap.cooperatorlogin.more.disable" imagelist="imagelist.cooperatorlogin.more" index="4" />
+        
+        <imagelist id="imagelist.qq" vertical="0" splitter="1" varyblock="1" image="community/imagelist.qq.png" />
+		<bitmap id="bitmap.qq.normal" imagelist="imagelist.qq" index="1" />
+		<bitmap id="bitmap.qq.down" imagelist="imagelist.qq" index="2" />
+        
+        <imagelist id="imagelist.qq.big" vertical="0" splitter="1" varyblock="1" image="community/imagelist.qq.big.png" />
+		<bitmap id="bitmap.qq.big.normal" imagelist="imagelist.qq.big" index="1" />
+        <bitmap id="bitmap.qq.big.hover" imagelist="imagelist.qq.big" index="2" />
+		<bitmap id="bitmap.qq.big.down" imagelist="imagelist.qq.big" index="3" />
+        
+        <imagelist id="imagelist.weixin" vertical="0" splitter="1" varyblock="1" image="community/imagelist.weixin.png" />
+		<bitmap id="bitmap.weixin.normal" imagelist="imagelist.weixin" index="1" />
+		<bitmap id="bitmap.weixin.down" imagelist="imagelist.weixin" index="2" />
+        
+        <imagelist id="imagelist.weixin.big" vertical="0" splitter="1" varyblock="1" image="community/imagelist.weixin.big.png" />
+		<bitmap id="bitmap.weixin.big.normal" imagelist="imagelist.weixin.big" index="1" />
+        <bitmap id="bitmap.weixin.big.hover" imagelist="imagelist.weixin.big" index="2" />
+		<bitmap id="bitmap.weixin.big.down" imagelist="imagelist.weixin.big" index="3" />
+        
+        <imagelist id="imagelist.cooperatorlogin.btn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.cooperatorlogin.btn.png" />
+		<texture id="texture.cooperatorlogin.btn.normal" type="NineInOne" imagelist="imagelist.cooperatorlogin.btn" index="1" />
+		<texture id="texture.cooperatorlogin.btn.hover" type="NineInOne" imagelist="imagelist.cooperatorlogin.btn" index="2" />
+		<texture id="texture.cooperatorlogin.btn.down" type="NineInOne" imagelist="imagelist.cooperatorlogin.btn" index="3" />
+		<texture id="texture.cooperatorlogin.btn.disable" type="NineInOne" imagelist="imagelist.cooperatorlogin.btn" index="4" />
+        
+        <imagelist id="imagelist.cooperatorlogin.left.btn" vertical="0" splitter="1" varyblock="1" image="community/imagelist.cooperatorlogin.left.btn.png" />
+		<bitmap id="bitmap.cooperatorlogin.left.btn.normal" imagelist="imagelist.cooperatorlogin.left.btn" index="1" />
+		<bitmap id="bitmap.cooperatorlogin.left.btn.hover" imagelist="imagelist.cooperatorlogin.left.btn" index="2" />
+		<bitmap id="bitmap.cooperatorlogin.left.btn.down" imagelist="imagelist.cooperatorlogin.left.btn" index="3" />
+		<bitmap id="bitmap.cooperatorlogin.left.btn.disable" imagelist="imagelist.cooperatorlogin.left.btn" index="4" />
+        
+        <imagelist id="imagelist.cooperatorlogin.more.icon" vertical="0" splitter="1" varyblock="1" image="community/imagelist.cooperatorlogin.more.icon.png" />
+		<bitmap id="bitmap.cooperatorlogin.more.icon.phone" imagelist="imagelist.cooperatorlogin.more.icon" index="1" />
+		<bitmap id="bitmap.cooperatorlogin.more.icon.sina" imagelist="imagelist.cooperatorlogin.more.icon" index="2" />
+		<bitmap id="bitmap.cooperatorlogin.more.icon.xiaomi" imagelist="imagelist.cooperatorlogin.more.icon" index="3" />
+		<bitmap id="bitmap.cooperatorlogin.more.icon.alipay" imagelist="imagelist.cooperatorlogin.more.icon" index="4" />
+        <bitmap id="bitmap.cooperatorlogin.more.icon.renren" imagelist="imagelist.cooperatorlogin.more.icon" index="5" />
+        <bitmap id="bitmap.cooperatorlogin.more.icon.tianyi" imagelist="imagelist.cooperatorlogin.more.icon" index="6" />
+        
+        <imagelist id="imagelist.cooperatorlogin.more.iconhover" vertical="0" splitter="1" varyblock="1" image="community/imagelist.cooperatorlogin.more.iconhover.png" />
+		<bitmap id="bitmap.cooperatorlogin.more.iconhover.phone" imagelist="imagelist.cooperatorlogin.more.iconhover" index="1" />
+		<bitmap id="bitmap.cooperatorlogin.more.iconhover.sina" imagelist="imagelist.cooperatorlogin.more.iconhover" index="2" />
+		<bitmap id="bitmap.cooperatorlogin.more.iconhover.xiaomi" imagelist="imagelist.cooperatorlogin.more.iconhover" index="3" />
+		<bitmap id="bitmap.cooperatorlogin.more.iconhover.alipay" imagelist="imagelist.cooperatorlogin.more.iconhover" index="4" />
+        <bitmap id="bitmap.cooperatorlogin.more.iconhover.renren" imagelist="imagelist.cooperatorlogin.more.iconhover" index="5" />
+        <bitmap id="bitmap.cooperatorlogin.more.iconhover.tianyi" imagelist="imagelist.cooperatorlogin.more.iconhover" index="6" />
+        
+        <color id="color.cooperatorlogin.text" value="#666666" />
+        <color id="color.cooperatorlogin.hover" value="#0f97ff" />
+        
+        <font id="font.recommendlogin.25" height="25" facename="defaultfont" />
+        <font id="font.recommendlogin.16" height="16" facename="defaultfont" />
+	</resource>
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->

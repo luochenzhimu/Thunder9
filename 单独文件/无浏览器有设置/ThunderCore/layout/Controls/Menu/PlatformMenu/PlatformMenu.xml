@@ -1,0 +1,205 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<xlue>
+	<!-- 更多 二级菜单 -->
+	<objtemplate id="platform_menu.submenu.more" class="NormalMenu" >
+		<attr>
+			<width>180</width>
+			<height>360</height>
+			<ContextID>platform_menu.submenu.more_context</ContextID>
+			<BknID>menu.bkn</BknID>
+			<ShadingID>mainmenu.light</ShadingID>
+			<SrcColorID>menu.color.src</SrcColorID>
+			<DestColorID>menu.color.dest</DestColorID>
+			<DefaultItemTemplate>menu.main.itemex</DefaultItemTemplate>
+			<DefaultSpliterTemplate>menu.main.splitter</DefaultSpliterTemplate>
+		</attr>
+	</objtemplate>
+
+	<objtemplate id="platform_menu.submenu.more_context" class="MenuObject" templateid="menu.object.template">
+		<attr>
+		</attr>
+		<children>
+			<obj id="submenu.more.about" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Text>关于迅雷</Text>
+				</attr>
+				<eventlist>
+					<event name="OnSelect" file="PlatformMenu.xml.lua" func="ThunderAbout_OnSelect" />
+				</eventlist>
+			</obj>
+			<!--
+			<obj id="submenu.more.help" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Text>客服中心</Text>
+					<GlobalHotKey>F1</GlobalHotKey>
+				</attr>
+				<eventlist>
+					<event name="OnSelect" file="PlatformMenu.xml.lua" func="HelpCenter_OnSelect" />
+				</eventlist>
+			</obj>			
+			<obj id="submenu.more.forum" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Text>用户论坛(B)</Text>
+					<HotKey>66</HotKey>
+				</attr>
+				<eventlist>
+					<event name="OnSelect" file="PlatformMenu.xml.lua" func="UserForum_OnSelect" />
+				</eventlist>
+			</obj>
+			-->
+		</children>
+	</objtemplate>
+
+	<!-- 主菜单 -->
+	<objtemplate id="platform_menu.context" class="MenuObject" templateid="menu.object.template">
+		<attr>
+		</attr>
+		<children>			
+			<obj id="menu.newtask.commontask" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Text>新建下载(N)</Text>
+					<Icon>menu.list.small.new</Icon>
+					<IconHover>menu.list.small.new.hover</IconHover>
+					<GlobalHotKey>Ctrl+N</GlobalHotKey>
+					<HotKey>78</HotKey>
+				</attr>
+				<eventlist>
+					<event name="OnSelect" file="PlatformMenu.xml.lua" function="NewCommonTask_OnSelect" />
+				</eventlist>
+			</obj>
+			<obj id="menu.import.uncompletetask" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Text>导入未完成下载(I)</Text>
+					<HotKey>73</HotKey>
+				</attr>
+				<eventlist>
+					<event name="OnSelect" file="PlatformMenu.xml.lua" func="ImportUnCompleteTask_OnSelect" />
+				</eventlist>
+			</obj>
+			<obj id="menu.line.1" class="MenuItemObject" templateid="menu.main.splitter">
+				<attr>
+					<Icon>menu.line.0</Icon>
+				</attr>
+			</obj>
+			<obj id="menu.autostart" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Text>开机启动(R)</Text>
+					<HotKey>82</HotKey>
+				</attr>
+				<eventlist>
+					<event name="OnInit" file="PlatformMenu.xml.lua" func="AutoStart_OnInit" />
+					<event name="OnSelect" file="PlatformMenu.xml.lua" func="AutoStart_OnSelect" />
+				</eventlist>
+			</obj>
+			<obj id="menu.config.panle" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Icon>menu.list.small.set</Icon>
+					<IconHover>menu.list.small.set.hover</IconHover>
+					<Text>设置中心(O)</Text>
+					<HotKey>79</HotKey>
+				</attr>
+				<eventlist>
+					<event name="OnSelect" file="PlatformMenu.xml.lua" func="ConfigPanel_OnSelect" />
+				</eventlist>
+			</obj>
+			<obj id="menu.line.2" class="MenuItemObject" templateid="menu.main.splitter">
+				<attr>
+					<Icon>menu.line.0</Icon>
+				</attr>
+			</obj>
+			<!--
+			<obj id="menu.suggest" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Icon>menu.list.small.tips</Icon>
+					<IconHover>menu.list.small.tips.hover</IconHover>
+					<Text>意见反馈</Text>
+				</attr>
+				<eventlist>
+					<event name="OnSelect" file="PlatformMenu.xml.lua" func="Suggest_OnSelect" />
+				</eventlist>
+			</obj>
+			<obj id="menu.update" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Icon>menu.list.small.update</Icon>
+					<IconHover>menu.list.small.update.hover</IconHover>
+					<Text>检查更新</Text>
+				</attr>
+				<eventlist>
+					<event name="OnInit" file="PlatformMenu.xml.lua" func="Update_OnInit" />
+					<event name="OnSelect" file="PlatformMenu.xml.lua" func="Update_OnSelect" />
+				</eventlist>
+			</obj>
+			-->
+			<obj id="menu.more" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Text>更多</Text>
+					<SubMenuID>platform_menu.submenu.more</SubMenuID>
+				</attr>
+				<eventlist>
+					<event name="OnShowSubMenu" file="PlatformMenu.xml.lua" func="More_OnShowSubMenu" />
+				</eventlist>
+			</obj>
+			<obj id="menu.line.3" class="MenuItemObject" templateid="menu.main.splitter">
+				<attr>
+					<Icon>menu.line.0</Icon>
+				</attr>
+			</obj>
+			<obj id="menu.exit" class="MenuItemObject" templateid="menu.main.item">
+				<attr>
+					<Text>退出(X)</Text>
+					<HotKey>88</HotKey>
+					<Icon>menu.list.small.close</Icon>
+					<IconHover>menu.list.small.close.hover</IconHover>
+				</attr>
+				<eventlist>
+					<event name="OnSelect" file="PlatformMenu.xml.lua" func="Exit_OnSelect" />
+				</eventlist>
+			</obj>
+
+		</children>
+	</objtemplate>
+
+	<!-- 主菜单 对象树 -->
+	<objtreetemplate id="menutree.platform_menu">
+		<attr>
+			<left>-1000</left>
+			<top>-1000</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>
+		<obj id="context_menu" class="NormalMenu">
+			<attr>
+				<width>180</width>
+				<height>130</height>
+				<ContextID>platform_menu.context</ContextID>
+				<BknID>menu.bkn</BknID>
+				<UpBknID>menu.bkn</UpBknID>
+				<ShadingID>mainmenu.light</ShadingID>
+				<SrcColorID>menu.color.src</SrcColorID>
+				<DestColorID>menu.color.dest</DestColorID>
+				<DefaultItemTemplate>menu.main.itemex</DefaultItemTemplate>
+				<DefaultSpliterTemplate>menu.main.splitter</DefaultSpliterTemplate>
+				<AnimationTemplateID>animation.menu.alpha</AnimationTemplateID>
+			</attr>
+			<eventlist>
+				<event name="OnInitControl" file="PlatformMenu.xml.lua" func="Menu_OnInitControl" />
+			</eventlist>
+		</obj>
+	</objtreetemplate>
+
+	<!-- 主菜单 窗口 -->
+	<hostwndtemplate id="hostwnd.platform_menu" class="MenuHostWnd">
+		<attr>
+			<trapmouse>0</trapmouse>
+			<mode>auto</mode>
+			<topmost>1</topmost>
+		</attr>
+		<eventlist>
+			<event name="OnPopupMenu" file="PlatformMenu.xml.lua" func="OnPopupMenu" />
+			<event name="OnEndMenu" file="PlatformMenu.xml.lua" func="OnEndMenu"/>
+		</eventlist>
+	</hostwndtemplate>
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->

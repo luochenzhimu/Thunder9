@@ -1,0 +1,114 @@
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
+<xlue>
+	<!-- 浏览器标签栏容器 -->
+	<control class="XLBrowserApp.TabHeaderContainer">
+		<attr_def>
+			<attr name="DefaultTabWidth" type="int">
+				<default>160</default>
+			</attr>
+			<attr name="MinTabWidth" type="int">
+				<default>70</default>
+			</attr>
+			<attr name="TabHeight" type="int">
+				<default>36</default>
+			</attr>
+			<attr name="TabGapWidth" type="int">
+				<default>1</default>
+			</attr>
+		</attr_def>
+		<method_def>
+			<InsertTabHeader file="TabHeaderContainer.xml.lua" func="InsertTabHeader" />
+			<RemoveTabHeader file="TabHeaderContainer.xml.lua" func="RemoveTabHeader" />
+			<GetTabHeaderCount file="TabHeaderContainer.xml.lua" func="GetTabHeaderCount" />
+			<GetTabHeaderByIndex file="TabHeaderContainer.xml.lua" func="GetTabHeaderByIndex" />
+		</method_def>
+		<event_def>
+			<OnNewTabClick/>
+			<OnPreTabClick/>
+			<OnNextTabClick/>
+			<OnTabDragChange>
+				<param>
+					<int />
+					<int />
+				</param>
+			</OnTabDragChange>
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="bkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<children>
+						<!-- 固定区，这个区域内的标签宽度不可变 -->
+						<obj id="fixed.layout" class="LayoutObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>0</width>
+								<height>father.height</height>
+							</attr>
+							<children>
+								<!-- 固定标签容器 -->
+								<obj id="fixed.container" class="LayoutObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+									</attr>
+								</obj>
+							</children>
+						</obj>
+
+						<!-- 可变区，这个区域内的标签宽度会随总宽度的变化而变化 -->
+						<obj id="unfixed.layout" class="LayoutObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>0</width>
+								<height>father.height</height>
+							</attr>
+							<children>
+								<!-- 可变标签容器 -->
+								<obj id="unfixed.container" class="LayoutObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+										<limitchild>1</limitchild>
+									</attr>
+								</obj>
+								<!-- 向前切换按钮 -->
+								<obj id="pretab.btn" class="Thunder.ImageButton">
+
+								</obj>
+								<!-- 向后切换按钮 -->
+								<obj id="nexttab.btn" class="Thunder.ImageButton">
+
+								</obj>
+							</children>
+						</obj>
+
+						<!-- 新建 tab 页按钮 -->
+						<obj id="newtab.btn" class="Thunder.ImageButton">
+
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="TabHeaderContainer.xml.lua" func="OnInitControl" />
+				<event name="OnDestroy" file="TabHeaderContainer.xml.lua" func="OnDestroy" />
+				<event name="OnPosChange" file="TabHeaderContainer.xml.lua" func="OnPosChange" />
+			</eventlist>
+		</objtemplate>
+	</control>
+</xlue>
+<!-- Thunder9 BY LUOCHENZHIMU -->
+<!-- Last updated on August 19th, 2017 -->
